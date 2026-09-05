@@ -1,0 +1,91 @@
+/* ── eDamana typography ──────────────────────────────────────────────────
+   English: Figtree. Arabic: Noto Sans Arabic. Nothing else.
+   Figtree's geometric-humanist forms echo the logo's engineered arrows, so
+   headings run heavy (700-900) and tight; body runs 400-500 and open. */
+:root{
+  --font-latin:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-arabic:"Noto Sans Arabic","Noto Sans Arabic Local","Figtree",system-ui,sans-serif;
+  --font-sans:var(--font-latin);
+  --font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+
+  --weight-light:300;
+  --weight-regular:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --weight-bold:700;
+  --weight-extrabold:800;
+  --weight-black:900;
+  /* Arabic ships 400/500/600/700 only. These aliases keep Arabic inside
+     the real weights instead of asking the browser to synthesise 800/900. */
+  --weight-arabic-body:400;
+  --weight-arabic-medium:500;
+  --weight-arabic-strong:600;
+  --weight-arabic-display:700;
+
+  /* Type scale — 1.25 major-third-ish, snapped to whole px */
+  --text-2xs:11px;
+  --text-xs:12px;
+  /* Floor for any UI text, mobile included. Nothing renders below this. */
+  --text-min:12px;
+  --text-sm:14px;
+  --text-base:16px;
+  --text-md:18px;
+  --text-lg:20px;
+  --text-xl:24px;
+  --text-2xl:30px;
+  --text-3xl:38px;
+  --text-4xl:48px;
+  --text-5xl:60px;
+  --text-6xl:76px;
+  --text-7xl:96px;
+
+  --leading-tight:1.05;
+  --leading-snug:1.15;
+  --leading-heading:1.2;
+  --leading-normal:1.5;
+  --leading-relaxed:1.65;
+  /* Arabic needs more room — the script has deeper ascenders/descenders */
+  --leading-arabic:1.8;
+  --leading-arabic-display:1.45;
+
+  --tracking-tighter:-0.03em;
+  --tracking-tight:-0.015em;
+  --tracking-normal:0;
+  --tracking-wide:0.02em;
+  --tracking-caps:0.08em; /* nav items and eyebrows are set in caps + this */
+
+  /* ── Semantic roles ── */
+  --type-display-size:var(--text-6xl);
+  --type-display-weight:var(--weight-extrabold);
+  --type-display-leading:var(--leading-tight);
+  --type-display-tracking:var(--tracking-tighter);
+
+  --type-h1-size:var(--text-4xl);
+  --type-h2-size:var(--text-3xl);
+  --type-h3-size:var(--text-2xl);
+  --type-h4-size:var(--text-xl);
+  --type-heading-weight:var(--weight-bold);
+
+  --type-body-size:var(--text-base);
+  --type-body-leading:var(--leading-relaxed);
+  --type-body-weight:var(--weight-regular);
+
+  --type-label-size:var(--text-sm);
+  --type-label-weight:var(--weight-medium);
+  --type-eyebrow-size:var(--text-xs);
+  --type-eyebrow-weight:var(--weight-bold);
+  --type-caption-size:var(--text-xs);
+  --type-numeric-weight:var(--weight-bold);
+}
+/* ══ ARABIC TYPOGRAPHY ══════════════════════════════════════════════════
+   Arabic is not Latin with a different font. Three things must never
+   cross over: letter-spacing (it severs the cursive joins), uppercase
+   (the script has no case), and Latin display weights above 700 (no
+   Arabic face exists for them). The reset lives in tokens/base.css so it
+   applies to every surface, including ones authored later. */
+[dir="rtl"],[lang="ar"],.ar{font-family:var(--font-arabic);line-height:var(--leading-arabic)}
+/* tokens/base.css sets font-family on <body>, which would otherwise beat the
+   family inherited from <html dir="rtl">. Re-assert it at body level so every
+   component that simply inherits its family lands on the Arabic face. */
+[dir="rtl"] body,[lang="ar"] body,body[dir="rtl"],body[lang="ar"],body.ar{font-family:var(--font-arabic);line-height:var(--leading-arabic)}
+[dir="rtl"] .ed-numeric,[lang="ar"] .ed-numeric{direction:ltr;unicode-bidi:embed;display:inline-block}

@@ -1,0 +1,64 @@
+/* ── eDamana surfaces: radii, borders, elevation, pattern, blur ──────────
+   Corners stay restrained — the identity is engineered, not friendly.
+   8px is the workhorse; the pill is reserved for nav-scale chips and
+   status badges only. */
+:root{
+  --radius-none:0;
+  --radius-xs:4px;
+  --radius-sm:6px;
+  --radius-md:8px;
+  --radius-lg:12px;
+  --radius-xl:16px;
+  --radius-2xl:24px;
+  --radius-pill:999px;
+  --radius-card:var(--radius-lg);
+  --radius-control:var(--radius-md);
+  --radius-input:var(--radius-md);
+  --radius-modal:var(--radius-xl);
+
+  --border-width-hairline:1px;
+  --border-width-strong:2px;
+  --border-width-focus:2px;
+
+  /* Elevation — always navy-tinted, never neutral black */
+  --shadow-none:none;
+  --shadow-xs:0 1px 2px rgba(9,22,92,.05);
+  --shadow-sm:0 1px 2px rgba(9,22,92,.06),0 2px 6px -2px rgba(9,22,92,.06);
+  --shadow-md:0 2px 4px rgba(9,22,92,.05),0 10px 24px -8px rgba(9,22,92,.12);
+  --shadow-lg:0 6px 12px -4px rgba(9,22,92,.08),0 24px 48px -16px rgba(9,22,92,.18);
+  --shadow-xl:0 12px 24px -8px rgba(9,22,92,.10),0 40px 80px -24px rgba(9,22,92,.24);
+  --shadow-inset-hairline:inset 0 0 0 1px rgba(9,22,92,.06);
+  --shadow-on-dark:0 12px 40px -12px rgba(0,0,0,.55);
+
+  /* Progressive-activation glows — for live/active transaction states */
+  --glow-teal:0 0 0 1px rgba(0,179,186,.35),0 8px 28px -8px rgba(0,179,186,.45);
+  --glow-blue:0 0 0 1px rgba(14,122,191,.35),0 8px 28px -8px rgba(14,122,191,.45);
+  --focus-ring-shadow:0 0 0 3px rgba(0,118,123,.32);
+
+  /* Overlays & scrims */
+  --scrim-navy:rgba(9,22,92,.72);
+  --scrim-navy-soft:rgba(9,22,92,.45);
+  --scrim-white:rgba(255,255,255,.86);
+  --blur-panel:blur(18px) saturate(140%); /* @kind other */
+  --blur-scrim:blur(6px); /* @kind other */
+
+  /* Brand pattern — light coloring on backgrounds, to add texture only */
+  --pattern-tile-navy:url("../assets/pattern/pattern-tile-navy.svg"); /* @kind other */
+  --pattern-tile-light:url("../assets/pattern/pattern-tile-light.svg"); /* @kind other */
+  --pattern-tile-white:url("../assets/pattern/pattern-tile-white.svg"); /* @kind other */
+  --pattern-size-sm:180px;
+  --pattern-size-md:320px;
+  --pattern-size-lg:520px;
+  --pattern-opacity-light:.09; /* @kind other */
+  --pattern-opacity-dark:.14; /* @kind other */
+
+  /* Data-viz sequence for dashboards — brand hues only */
+  --chart-1:var(--blue-600);
+  --chart-2:var(--teal-500);
+  --chart-3:var(--navy-700);
+  --chart-4:var(--mist-400);
+  --chart-5:var(--gold-500);
+  --chart-6:var(--coral-500);
+}
+.ed-pattern{background-image:var(--pattern-tile-navy);background-size:var(--pattern-size-md);opacity:var(--pattern-opacity-light)}
+.ed-pattern-on-dark{background-image:var(--pattern-tile-light);background-size:var(--pattern-size-md);opacity:var(--pattern-opacity-dark)}

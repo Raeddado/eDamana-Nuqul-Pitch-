@@ -1,0 +1,166 @@
+/* ── eDamana colour system ───────────────────────────────────────────────
+   The eight values marked OFFICIAL are lifted verbatim from the eDamana
+   Identity Colour Palette sheet. Everything else is a tint/shade ramp built
+   around those anchors for interface work. Never introduce a hue outside
+   this file. */
+:root{
+  /* Navy — "Security Blue". The primary trust & authority colour. */
+  --navy-950:#050b2e;
+  --navy-900:#09165c; /* OFFICIAL — Pantone P 109-16 C equivalent, C100 M93 Y36 K30 */
+  --navy-800:#0e2270;
+  --navy-700:#153080;
+  --navy-600:#1d4093;
+
+  /* Blue — "Transparent Blue". Technology, connectivity, primary action. */
+  --blue-800:#08557f;
+  --blue-700:#0b689f;
+  --blue-600:#0e7abf; /* OFFICIAL — Pantone P 109-8 C, C84 M44 Y0 K30 */
+  --blue-500:#2b8fcd;
+  --blue-400:#5cabda;
+  --blue-300:#93c8e7;
+  --blue-200:#c2e0f3;
+  --blue-100:#e3f1fa;
+  /* Logo-only blue. The arrow in the mark is #007bc4, marginally cooler than
+     --blue-600. Use ONLY inside logo artwork; never for UI. */
+  --blue-mark:#007bc4;
+
+  /* Teal — "Growth & Money Green". Active states, settlement, success. */
+  --teal-950:#00494d;
+  --teal-900:#00595d;
+  --teal-850:#00686d;
+  --teal-800:#00767b;
+  --teal-700:#009197;
+  --teal-600:#00a3a9;
+  --teal-500:#00b3ba; /* OFFICIAL — Pantone P 124-6 C, C74 M0 Y31 K0 */
+  --teal-400:#3ac5cb;
+  --teal-300:#7adcdf;
+  --teal-200:#b3edef;
+  --teal-100:#e0f7f8;
+
+  /* Institutional neutrals — every grey is blue-tinted, never neutral grey. */
+  --white:#ffffff;
+  --mist-050:#f7fbfe;
+  --mist-100:#ecf6fd; /* OFFICIAL — Pantone P 115-9 C, C9 M1 Y1 K0 */
+  --mist-200:#dbe8f4;
+  --mist-300:#c5d4e7; /* OFFICIAL — Pantone P 110-9 C, C27 M12 Y6 K0 */
+  --mist-400:#abc2dc; /* OFFICIAL — Pantone P 110-10 C, C38 M18 Y7 K0 */
+  --mist-500:#8296b8;
+  --mist-600:#5d6f94;
+  --mist-700:#3f5079;
+  --mist-800:#243360;
+
+  /* Accents — used sparingly, never as a surface. */
+  --coral-800:#a83338;
+  --coral-700:#b3383d;
+  --coral-600:#d94a4f;
+  --coral-500:#ec676b; /* OFFICIAL — Pantone P 57-5 C, C0 M72 Y48 K0 */
+  --coral-200:#f9cdce;
+  --coral-100:#fdeaea;
+  --gold-600:#e0b620;
+  --gold-500:#ffd741; /* OFFICIAL — Pantone P 7-7 C, C1 M15 Y81 K0 */
+  --gold-200:#fff0b8;
+  --gold-100:#fffae4;
+
+  /* ══ BRAND IDENTITY ══════════════════════════════════════════════════
+     The official identity colours, unaltered. Use these for brand
+     expression: patterns, decorative graphics, illustrations, brand
+     surfaces, non-critical accents, and any place the contrast
+     requirement is already satisfied (e.g. navy type on brand teal, or
+     brand teal on navy). NEVER wire an interactive control straight to
+     these — go through the ACTION / STATE tokens below, which are
+     WCAG-AA verified. */
+  --brand-navy:var(--navy-900);   /* #09165c — Security Blue */
+  --brand-blue:var(--blue-600);   /* #0e7abf — Transparent Blue */
+  --brand-teal:var(--teal-500);   /* #00b3ba — Growth & Money Green */
+  --brand-coral:var(--coral-500); /* #ec676b */
+  --brand-gold:var(--gold-500);   /* #ffd741 */
+
+  /* ── Semantic aliases ── */
+  --brand-primary:var(--navy-900);
+  --brand-secondary:var(--blue-600);
+  --brand-tertiary:var(--teal-500);
+
+  --text-strong:var(--navy-900);
+  --text-body:var(--mist-800);
+  --text-muted:var(--mist-600);
+  --text-subtle:var(--mist-500);
+  --text-on-dark:var(--white);
+  --text-on-dark-muted:var(--mist-400);
+  --text-link:var(--blue-600);
+  --text-link-hover:var(--navy-900);
+  --text-accent:var(--teal-500);
+
+  --surface-page:var(--white);
+  --surface-subtle:var(--mist-100);
+  --surface-sunken:var(--mist-200);
+  --surface-card:var(--white);
+  --surface-inverse:var(--navy-900);
+  --surface-inverse-raised:var(--navy-800);
+  --surface-brand:var(--blue-600);
+  --surface-active:var(--teal-500);
+
+  --border-subtle:var(--mist-200);
+  --border-default:var(--mist-300);
+  --border-strong:var(--mist-400);
+  --border-brand:var(--blue-600);
+  /* Form-control and step-node boundaries must be perceivable — WCAG
+     1.4.11 non-text contrast. 3.24:1 on white. Card edges keep the
+     hairline --border-subtle; controls use this. */
+  --border-control:#7b90b4;
+  --border-on-dark:color-mix(in srgb, var(--white) 22%, transparent);
+
+  /* ══ ACTIONS — every value below carries white or navy text at ≥4.5:1 ══
+     Ratios against white text are noted so a future change can be
+     re-verified without guessing. */
+  --action-primary:var(--blue-600);        /* white 4.61:1 */
+  --action-primary-hover:var(--blue-700);
+  --action-primary-active:var(--blue-800);
+
+  /* Release / settlement — the escrow product's most consequential
+     action. The identity teal #00b3ba carries white at only 2.57:1, so
+     the ACTION teal is the deepest step of the same official hue. Brand
+     teal still owns the dot, the border, the glow and every on-navy use. */
+  --action-release:var(--teal-800);        /* white 5.42:1 */
+  --action-release-hover:var(--teal-850);  /* white 6.56:1 */
+  --action-release-active:var(--teal-900); /* white 8.12:1 */
+  --action-secondary:var(--action-release);
+  --action-secondary-hover:var(--action-release-hover);
+  --action-secondary-active:var(--action-release-active);
+
+  --action-authority:var(--navy-900);      /* white 16.39:1 */
+  --action-authority-hover:var(--navy-800);
+  --action-danger:var(--coral-700);        /* white 5.92:1 */
+  --action-danger-hover:var(--coral-800);
+  --action-disabled-bg:var(--mist-200);
+  --action-disabled-fg:var(--mist-500);
+
+  /* ══ STATES ══════════════════════════════════════════════════════════
+     `--state-*` is the identity colour of the state — dots, bars, solid
+     fills that carry navy text, decorative marks.
+     `--state-*-fg` is the AA-verified text colour for that state on its
+     own `-bg`. Status controls must use the `-fg` pair. */
+  --state-success:var(--teal-500);
+  --state-success-bg:var(--teal-100);
+  --state-success-fg:var(--teal-800);      /* on teal-100: 4.86:1 */
+  --state-success-solid:var(--action-release);
+  --state-info:var(--blue-600);
+  --state-info-bg:var(--blue-100);
+  --state-info-fg:var(--blue-700);         /* on blue-100: 5.22:1 */
+  --state-warning:var(--gold-500);
+  --state-warning-bg:var(--gold-100);
+  --state-warning-fg:#8a6a00;              /* on gold-100: 4.84:1 */
+  --state-danger:var(--coral-500);
+  --state-danger-bg:var(--coral-100);
+  --state-danger-fg:var(--coral-700);      /* on coral-100: 5.11:1 */
+  --state-danger-solid:var(--action-danger);
+  --state-pending:var(--mist-400);
+  --state-pending-bg:var(--mist-100);
+  --state-pending-fg:var(--mist-700);      /* on mist-100: 7.27:1 */
+
+  /* Focus. The ring must clear 3:1 non-text contrast on whatever it sits
+     on. --focus-ring clears it on white (5.42:1) AND on navy (3.03:1);
+     on-dark component variants switch to --focus-ring-on-dark for
+     comfortable headroom (7.83:1 on navy). */
+  --focus-ring:var(--teal-800);
+  --focus-ring-on-dark:var(--teal-400);
+}

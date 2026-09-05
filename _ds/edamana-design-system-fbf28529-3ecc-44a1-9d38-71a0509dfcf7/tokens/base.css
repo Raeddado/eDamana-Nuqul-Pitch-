@@ -1,0 +1,48 @@
+/* ── eDamana base layer ─────────────────────────────────────────────────
+   Minimal element defaults so any page picking up styles.css already reads
+   as eDamana. No utility framework, no resets beyond what's needed. */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--font-latin);font-size:var(--type-body-size);font-weight:var(--type-body-weight);line-height:var(--type-body-leading);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,h5,h6{margin:0;color:var(--text-strong);font-weight:var(--type-heading-weight);line-height:var(--leading-heading);letter-spacing:var(--tracking-tight);text-wrap:balance}
+h1{font-size:var(--type-h1-size)}
+h2{font-size:var(--type-h2-size)}
+h3{font-size:var(--type-h3-size)}
+h4{font-size:var(--type-h4-size)}
+p{margin:0;text-wrap:pretty}
+a{color:var(--text-link);text-decoration:none;transition:color var(--dur-fast) var(--ease-standard)}
+a:hover{color:var(--text-link-hover);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:var(--border-width-focus) solid var(--focus-ring);outline-offset:2px}
+strong{font-weight:var(--weight-bold);color:var(--text-strong)}
+small{font-size:var(--type-caption-size)}
+hr{border:0;border-top:1px solid var(--border-subtle);margin:var(--space-8) 0}
+code,kbd,pre{font-family:var(--font-mono);font-size:.9em}
+img,svg,video{max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+::selection{background:var(--teal-200);color:var(--navy-900)}
+:root:has(.ed-dark) ::selection,.ed-dark ::selection{background:var(--teal-500);color:var(--navy-900)}
+.ed-dark{background:var(--surface-inverse);color:var(--text-on-dark-muted);--focus-ring:var(--focus-ring-on-dark)}
+.ed-dark h1,.ed-dark h2,.ed-dark h3,.ed-dark h4{color:var(--text-on-dark)}
+.ed-dark a{color:var(--teal-300)}
+.ed-dark a:hover{color:var(--white)}
+/* ══ ARABIC / RTL RESET ═════════════════════════════════════════════
+   Global, unconditional, and deliberately high-reach: every Latin-only
+   typographic behaviour is stripped from Arabic here so no component or
+   kit has to remember. letter-spacing severs the cursive joins; the
+   script has no case; and no Arabic face exists above weight 700, so any
+   800/900 request is clamped to the real display weight.
+   Anything that must opt out does so with .ed-latin (for genuinely Latin
+   runs inside Arabic copy — an IBAN, a product name, a currency code). */
+/* Component stylesheets are injected into <head> AFTER this file, and a
+   single class ties this selector on specificity — so source order would
+   hand the win to the Latin rule. These two declarations are the one place
+   in the system that needs !important. */
+[dir="rtl"],[dir="rtl"] *,[lang="ar"],[lang="ar"] *,.ar,.ar *{letter-spacing:normal!important;text-transform:none!important}
+[dir="rtl"] .ed-eyebrow,[lang="ar"] .ed-eyebrow,.ar .ed-eyebrow{font-size:var(--text-sm);font-weight:var(--weight-arabic-strong)}
+[dir="rtl"] .ed-latin,[lang="ar"] .ed-latin{font-family:var(--font-latin);direction:ltr;unicode-bidi:isolate;letter-spacing:var(--tracking-normal)!important}
+[dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3,[dir="rtl"] h4,[lang="ar"] h1,[lang="ar"] h2,[lang="ar"] h3,[lang="ar"] h4{line-height:var(--leading-arabic-display);font-weight:var(--weight-arabic-display)}
+[dir="rtl"] [style*="font-weight:800"],[dir="rtl"] [style*="font-weight: 800"],[lang="ar"] [style*="font-weight:800"]{font-weight:var(--weight-arabic-display)!important}
+[dir="rtl"]{text-align:right}
+.ed-numeric{font-variant-numeric:tabular-nums;font-weight:var(--type-numeric-weight);letter-spacing:var(--tracking-tight)}
+.ed-eyebrow{font-size:var(--type-eyebrow-size);font-weight:var(--type-eyebrow-weight);letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--text-muted)}
+.ed-visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}

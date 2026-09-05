@@ -1,0 +1,15 @@
+/* eDamana webfonts.
+   Figtree (Latin) is the official English typeface — six weights, self-hosted.
+   Noto Sans Arabic is the official Arabic typeface. Weights 400/500/600/700
+   are loaded from Google Fonts because the brand owner supplied only
+   Regular; browser-synthesised Arabic bold is never acceptable. The
+   supplied Regular file is retained below as an offline fallback under a
+   private family name. */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap");
+@font-face{font-family:"Figtree";src:url("../assets/fonts/Figtree-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Figtree";src:url("../assets/fonts/Figtree-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Figtree";src:url("../assets/fonts/Figtree-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Figtree";src:url("../assets/fonts/Figtree-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Figtree";src:url("../assets/fonts/Figtree-ExtraBold.otf") format("opentype");font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:"Figtree";src:url("../assets/fonts/Figtree-Black.otf") format("opentype");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic Local";src:url("../assets/fonts/NotoSansArabic-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
