@@ -333,7 +333,7 @@
       overflow-x: hidden;
       padding: 12px 10px;
       box-sizing: border-box;
-      display: flex;
+      display: none !important;
       flex-direction: column;
       gap: 12px;
       z-index: 2147482500;
