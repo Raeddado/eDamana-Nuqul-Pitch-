@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>eDamana | From an Idea to eDamana</title>
+<meta name="theme-color" content="#09165c">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="ext-resource-dependency" content="assets/ds/symbol.svg" data-resource-id="sym" />
+<meta name="ext-resource-dependency" content="assets/ds/symbol-white.svg" data-resource-id="symw" />
+<meta name="ext-resource-dependency" content="assets/ds/lockup-horizontal-white.svg" data-resource-id="lhw" />
+<meta name="ext-resource-dependency" content="assets/ds/lockup-vertical-tagline-white.svg" data-resource-id="lvtw" />
+<meta name="ext-resource-dependency" content="assets/ds/arrow-left-blue.svg" data-resource-id="albl" />
+<meta name="ext-resource-dependency" content="assets/ds/arrow-right-teal.svg" data-resource-id="artl" />
+<meta name="ext-resource-dependency" content="assets/partners/dvld.png" data-resource-id="pdvld" />
+<meta name="ext-resource-dependency" content="assets/partners/sanad.png" data-resource-id="psanad" />
+<meta name="ext-resource-dependency" content="assets/partners/efawateercom.png" data-resource-id="pefaw" />
+<meta name="ext-resource-dependency" content="assets/partners/arab-bank.png" data-resource-id="pab" />
+<meta name="ext-resource-dependency" content="assets/partners/cbj.png" data-resource-id="pcbj" />
+<meta name="ext-resource-dependency" content="assets/founders/raed.png" data-resource-id="fraed" />
+<meta name="ext-resource-dependency" content="assets/founders/jasmine.png" data-resource-id="fjas" />
+<meta name="ext-resource-dependency" content="assets/app/initiate.png" data-resource-id="ainit" />
+<meta name="ext-resource-dependency" content="assets/app/verify.png" data-resource-id="averf" />
+<meta name="ext-resource-dependency" content="assets/app/secure.png" data-resource-id="asecu" />
+<meta name="ext-resource-dependency" content="assets/app/complete.png" data-resource-id="acomp" />
+<link rel="stylesheet" href="_ds/edamana-design-system-fbf28529-3ecc-44a1-9d38-71a0509dfcf7/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/edamana-design-system-fbf28529-3ecc-44a1-9d38-71a0509dfcf7/tokens/colors.css">
+<link rel="stylesheet" href="_ds/edamana-design-system-fbf28529-3ecc-44a1-9d38-71a0509dfcf7/tokens/typography.css">
+<link rel="stylesheet" href="_ds/edamana-design-system-fbf28529-3ecc-44a1-9d38-71a0509dfcf7/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/edamana-design-system-fbf28529-3ecc-44a1-9d38-71a0509dfcf7/tokens/surfaces.css">
+<link rel="stylesheet" href="_ds/edamana-design-system-fbf28529-3ecc-44a1-9d38-71a0509dfcf7/tokens/motion.css">
+<link rel="stylesheet" href="_ds/edamana-design-system-fbf28529-3ecc-44a1-9d38-71a0509dfcf7/tokens/base.css">
+<link rel="stylesheet" href="_ds/edamana-design-system-fbf28529-3ecc-44a1-9d38-71a0509dfcf7/styles.css">
+<script src="_ds/edamana-design-system-fbf28529-3ecc-44a1-9d38-71a0509dfcf7/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+html, body { width:100%; height:100%; margin:0; padding:0; overflow:hidden; background:#09165c; font-family:Figtree, system-ui, sans-serif; overscroll-behavior:none; }
+a { color: #0e7abf; text-decoration: none; }
+a:hover { color: #09165c; text-decoration: underline; text-underline-offset: 3px; }
+/* Every keyframe declares only `from`, so the authored static style IS the end
+   state: print, thumbnails and PowerPoint export all show a finished slide.
+   Gated on [data-deck-active] so a build replays when the presenter returns.
+   Nothing decorative is animated — no footers, no labels, no logos. */
+/* Entrance motion. Every keyframe declares only `from`, so the authored
+   static style IS the end state — print, thumbnails and PowerPoint export all
+   show the finished slide. Gated on [data-deck-active] so a build replays
+   whenever the presenter returns to a slide. */
+@keyframes ed-rise { from { opacity: 0; transform: translateY(26px); } }
+@keyframes ed-up { from { opacity: 0; transform: translateY(48px); } }
+@keyframes ed-fade { from { opacity: 0; } }
+@keyframes ed-pop { from { opacity: 0; transform: scale(0.94); } }
+@keyframes ed-lft { from { opacity: 0; transform: translateX(90px); } }
+@keyframes ed-rgt { from { opacity: 0; transform: translateX(-90px); } }
+@keyframes ed-wx { from { transform: scaleX(0); } }
+@keyframes ed-wy { from { transform: scaleY(0); } }
+@keyframes ed-draw { from { stroke-dashoffset: 3000; } }
+@keyframes ed-lit { from { color: #ffffff; } }
+@keyframes ed-node { from { background: #c5d4e7; box-shadow: none; } }
+@keyframes ed-val-v {
+  0%   { transform: translateY(-700px); opacity: 0; }
+  6%   { opacity: 1; }
+  20%  { transform: translateY(-430px); }
+  64%  { transform: translateY(-430px); }
+  86%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-deck-active] [data-r] { animation: ed-rise 760ms cubic-bezier(.16,1,.3,1) both; }
+  [data-deck-active] [data-u] { animation: ed-up 900ms cubic-bezier(.16,1,.3,1) both; }
+  [data-deck-active] [data-f] { animation: ed-fade 900ms cubic-bezier(.2,0,.2,1) both; }
+  [data-deck-active] [data-p] { animation: ed-pop 760ms cubic-bezier(.16,1,.3,1) both; }
+  [data-deck-active] [data-lf] { animation: ed-lft 900ms cubic-bezier(.16,1,.3,1) both; }
+  [data-deck-active] [data-rt] { animation: ed-rgt 900ms cubic-bezier(.16,1,.3,1) both; }
+  [data-deck-active] [data-wx] { animation: ed-wx 900ms cubic-bezier(.2,0,.2,1) both; transform-origin: 0 50%; }
+  [data-deck-active] [data-wxr] { animation: ed-wx 900ms cubic-bezier(.2,0,.2,1) both; transform-origin: 100% 50%; }
+  [data-deck-active] [data-wy] { animation: ed-wy 900ms cubic-bezier(.2,0,.2,1) both; transform-origin: 50% 0; }
+  [data-deck-active] [data-dw] { animation: ed-draw 1600ms cubic-bezier(.2,0,.2,1) both; }
+  [data-deck-active] [data-lit] { animation: ed-lit 1000ms cubic-bezier(.2,0,.2,1) both; }
+  [data-deck-active] [data-nd] { animation: ed-node 500ms cubic-bezier(.2,0,.2,1) both; }
+  [data-deck-active] [data-valv] { animation: ed-val-v 6500ms cubic-bezier(.4,0,.6,1) both; }
+  [data-motion="off"] [data-deck-active] * { animation: none !important; }
+}
+[data-acts="off"] [data-act] { display: none; }
+/* ── Click-advanced builds ─────────────────────────────────────────────
+   A slide opts in with data-steps + data-stage="{{ sN }}" + onClick. ────────────────────────────────────
+   Elements carry data-from="N" = the stage they appear at. Each rule hides
+   everything still ahead of the current stage. With NO data-stage attribute
+   (streaming, print, PPTX export) nothing is hidden, so the static slide is
+   the finished journey. */
+[data-steps] [data-from] { transition: opacity 600ms cubic-bezier(.2,0,.2,1), stroke-dashoffset 1100ms cubic-bezier(.2,0,.2,1); }
+[data-steps] [data-arrive] { transition: color 600ms cubic-bezier(.2,0,.2,1); }
+[data-steps][data-stage="0"] [data-from] { opacity: 0; stroke-dashoffset: 2400; }
+[data-steps][data-stage="1"] :is([data-from="2"],[data-from="3"],[data-from="4"],[data-from="5"],[data-from="6"],[data-from="7"]) { opacity: 0; stroke-dashoffset: 2400; }
+[data-steps][data-stage="2"] :is([data-from="3"],[data-from="4"],[data-from="5"],[data-from="6"],[data-from="7"]) { opacity: 0; stroke-dashoffset: 2400; }
+[data-steps][data-stage="3"] :is([data-from="4"],[data-from="5"],[data-from="6"],[data-from="7"]) { opacity: 0; stroke-dashoffset: 2400; }
+[data-steps][data-stage="4"] :is([data-from="5"],[data-from="6"],[data-from="7"]) { opacity: 0; stroke-dashoffset: 2400; }
+[data-steps][data-stage="5"] :is([data-from="6"],[data-from="7"]) { opacity: 0; stroke-dashoffset: 2400; }
+[data-steps][data-stage="6"] [data-from="7"] { opacity: 0; stroke-dashoffset: 2400; }
+[data-steps]:is([data-stage="0"],[data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"],[data-stage="6"]) [data-arrive] { color: #8296b8; }
+</style>
+</helmet>
+<div data-motion="{{ motion }}" data-acts="{{ acts }}" style="width: 100%; height: 100%;">
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" no-rail="" hint-size="100%,100%">
+
+<section data-label="Cover" data-speaker-notes="Open on the name. This is an execution story, not a product story." style="background: #09165c; overflow: hidden; font-family: Figtree, sans-serif;">
+  <svg viewBox="0 0 1920 1080" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+    <path data-dw="1" d="M 1500 1080 L 1500 470 L 1180 250" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1.5" stroke-dasharray="3000" style="animation-delay: 1.4s; animation-duration: 1800ms;"></path>
+    <path data-dw="1" d="M 1500 1080 L 1500 470 L 1820 250" fill="none" stroke="rgba(0,179,186,0.55)" stroke-width="1.5" stroke-dasharray="3000" style="animation-delay: 1.7s; animation-duration: 1800ms;"></path>
+  </svg>
+  <img src="assets/ds/lockup-vertical-tagline-white.svg" data-res="lvtw" alt="eDamana" style="position: absolute; left: 130px; top: 100px; width: 214px;">
+  <h1 data-u="1" style="position: absolute; left: 130px; top: 520px; margin: 0; width: 1300px; font-size: 132px; font-weight: 900; line-height: 1.01; letter-spacing: -0.04em; color: #ffffff;">FROM AN IDEA<br>TO eDAMANA.</h1>
+  <div data-wx="1" style="position: absolute; left: 130px; top: 812px; width: 140px; height: 4px; background: #00b3ba; animation-delay: 0.8s;"></div>
+  <p data-r="1" style="position: absolute; left: 130px; top: 862px; margin: 0; width: 1080px; font-size: 38px; font-weight: 400; line-height: 1.4; color: #abc2dc; animation-delay: 0.95s;">Building a FinTech Startup in a Challenging and Fast-Changing Environment</p>
+  <div data-f="1" style="position: absolute; right: 130px; bottom: 96px; text-align: right; animation-delay: 1.3s;">
+    <div style="font-size: 34px; font-weight: 700; color: #ffffff; letter-spacing: -0.01em;">Raed Al Dado</div>
+    <div style="margin-top: 8px; font-size: 26px; font-weight: 500; color: #3ac5cb;">Founder &amp; CEO · eDamana</div>
+  </div>
+</section>
+
+<section data-label="Starts With A Problem" data-speaker-notes="Say the first statement, then stop. Let the room sit in it before you say PROBLEM." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif;">
+  <div data-act="1" style="position: absolute; left: 130px; top: 96px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #8296b8;">Act I · The Problem</div>
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 210px; margin: 0; font-size: 78px; font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; color: #5d6f94;">ENTREPRENEURSHIP<br>DOESN'T START<br>WITH AN IDEA.</h2>
+  <div data-r="1" style="position: absolute; left: 130px; top: 570px; font-size: 52px; font-weight: 600; letter-spacing: -0.015em; color: #09165c; animation-delay: 1.3s;">IT STARTS WITH A</div>
+  <div data-u="1" style="position: absolute; left: 124px; top: 636px; font-size: 258px; font-weight: 900; line-height: 1; letter-spacing: -0.05em; color: #09165c; animation-delay: 1.7s;">PROBLEM.</div>
+  <div data-wx="1" style="position: absolute; left: 130px; top: 908px; width: 1240px; height: 14px; background: #00b3ba; animation-delay: 2.3s;"></div>
+</section>
+
+<section data-label="Zero Trust" data-speaker-notes="Read both quotes as the people said them. The dark band between them is the product." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif;">
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 140px; margin: 0; font-size: 56px; font-weight: 600; letter-spacing: -0.02em; color: #5d6f94;">TWO PEOPLE. ONE TRANSACTION.</h2>
+  <div data-u="1" style="position: absolute; left: 126px; top: 200px; font-size: 124px; font-weight: 900; line-height: 1.05; letter-spacing: -0.04em; color: #09165c; animation-delay: 0.3s;">ZERO TRUST.</div>
+
+  <div data-f="1" style="position: absolute; left: 0; top: 380px; width: 830px; height: 490px; background: #f7fbfe; animation-delay: 0.7s;"></div>
+  <div data-f="1" style="position: absolute; left: 1090px; top: 380px; width: 830px; height: 490px; background: #f7fbfe; animation-delay: 0.85s;"></div>
+  <div data-f="1" style="position: absolute; left: 830px; top: 380px; width: 260px; height: 490px; background: #09165c; animation-delay: 1.4s;"></div>
+
+  <div data-lf="1" style="position: absolute; left: 130px; top: 440px; width: 620px; animation-delay: 0.8s;">
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <img src="assets/ds/arrow-left-blue.svg" data-res="albl" alt="" style="width: 26px; height: 26px;">
+      <span style="font-size: 24px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #09165c;">Buyer</span>
+    </div>
+    <p style="margin: 26px 0 0; font-size: 42px; font-weight: 500; line-height: 1.3; letter-spacing: -0.01em; color: #09165c;">&ldquo;I don't want to pay before I receive.&rdquo;</p>
+  </div>
+
+  <div data-rt="1" style="position: absolute; left: 1150px; top: 440px; width: 640px; animation-delay: 0.95s;">
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <img src="assets/ds/arrow-right-teal.svg" data-res="artl" alt="" style="width: 26px; height: 26px;">
+      <span style="font-size: 24px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #09165c;">Seller</span>
+    </div>
+    <p style="margin: 26px 0 0; font-size: 42px; font-weight: 500; line-height: 1.3; letter-spacing: -0.01em; color: #09165c;">&ldquo;I don't want to transfer ownership before I get paid.&rdquo;</p>
+  </div>
+
+  <div data-wx="1" style="position: absolute; left: 560px; top: 726px; width: 270px; height: 5px; background: #00b3ba; animation-delay: 1.1s;"></div>
+  <div data-wxr="1" style="position: absolute; left: 1090px; top: 726px; width: 270px; height: 5px; background: #00b3ba; animation-delay: 1.25s;"></div>
+
+  <div data-f="1" style="position: absolute; left: 959px; top: 400px; width: 2px; height: 300px; border-left: 2px dashed rgba(255,255,255,0.3); animation-delay: 1.7s;"></div>
+  <div data-f="1" style="position: absolute; left: 830px; top: 740px; width: 260px; text-align: center; font-size: 32px; font-weight: 800; line-height: 1.2; letter-spacing: 0.1em; color: #ffffff; animation-delay: 1.8s;">TRUST<br>GAP</div>
+
+  <div data-r="1" style="position: absolute; left: 130px; top: 940px; font-size: 48px; font-weight: 600; letter-spacing: -0.02em; color: #5d6f94; animation-delay: 2.3s;">THE REAL PROBLEM WASN'T PAYMENT. <span style="font-weight: 800; color: #09165c;">IT WAS TRUST.</span></div>
+</section>
+
+<section data-label="Money Could Wait" data-speaker-notes="Watch the value stop in the middle. That pause is the entire invention." style="background: #09165c; overflow: hidden; font-family: Figtree, sans-serif;">
+  <div data-act="1" style="position: absolute; left: 130px; top: 96px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #8296b8;">Act II · The Insight</div>
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 300px; margin: 0; width: 900px; font-size: 76px; font-weight: 600; line-height: 1.1; letter-spacing: -0.025em; color: #abc2dc;">WHAT IF THE MONEY COULD</h2>
+  <div data-u="1" style="position: absolute; left: 124px; top: 470px; font-size: 232px; font-weight: 900; line-height: 1; letter-spacing: -0.045em; color: #ffffff; animation-delay: 0.5s;">WAIT?</div>
+  <p data-r="1" style="position: absolute; left: 130px; top: 760px; margin: 0; width: 780px; font-size: 36px; font-weight: 400; line-height: 1.4; color: #7adcdf; animation-delay: 6.6s;">That simple question changed everything.</p>
+  <p style="position: absolute; left: 130px; top: 900px; margin: 0; width: 800px; font-size: 23px; font-weight: 400; line-height: 1.5; color: #8296b8;">Banking infrastructure safeguards and executes the funds. eDamana orchestrates the conditions.</p>
+
+  <div data-wy="1" style="position: absolute; left: 1198px; top: 200px; width: 4px; height: 700px; background: rgba(0,179,186,0.4); animation-delay: 0.9s; animation-duration: 1400ms;"></div>
+
+  <div data-nd="1" style="position: absolute; left: 1188px; top: 190px; width: 24px; height: 24px; border-radius: 50%; background: #00b3ba; animation-delay: 1.3s;"></div>
+  <div data-r="1" style="position: absolute; left: 1290px; top: 174px; font-size: 38px; font-weight: 600; color: #ffffff; animation-delay: 1.35s;">Buyer Pays</div>
+
+  <div data-p="1" style="position: absolute; left: 1140px; top: 380px; width: 650px; height: 180px; box-sizing: border-box; padding: 0 44px; display: flex; flex-direction: column; justify-content: center; gap: 10px; background: rgba(0,179,186,0.14); border: 2px solid #00b3ba; border-radius: 12px; box-shadow: 0 0 80px rgba(0,179,186,0.32); animation-delay: 2.4s;">
+    <div style="font-size: 54px; font-weight: 800; letter-spacing: -0.025em; color: #ffffff;">MONEY WAITS</div>
+    <div style="font-size: 25px; font-weight: 500; color: #7adcdf;">Funds held under the agreed condition</div>
+  </div>
+
+  <div data-nd="1" style="position: absolute; left: 1188px; top: 690px; width: 24px; height: 24px; border-radius: 50%; background: #00b3ba; box-shadow: 0 0 24px #00b3ba; animation-delay: 4.6s;"></div>
+  <div data-r="1" style="position: absolute; left: 1290px; top: 674px; font-size: 38px; font-weight: 600; color: #ffffff; animation-delay: 4.65s;">Condition Is Verified</div>
+
+  <div data-nd="1" style="position: absolute; left: 1184px; top: 886px; width: 32px; height: 32px; border-radius: 50%; background: #00b3ba; box-shadow: 0 0 0 10px rgba(0,179,186,0.18); animation-delay: 6s;"></div>
+  <div data-r="1" style="position: absolute; left: 1290px; top: 872px; font-size: 38px; font-weight: 700; color: #ffffff; animation-delay: 6.05s;">Seller Gets Paid</div>
+
+  <div data-valv="1" style="position: absolute; left: 1174px; top: 874px; width: 52px; height: 52px; border-radius: 8px; background: #00b3ba; box-shadow: 0 0 40px rgba(0,179,186,0.8); animation-delay: 1.2s;"></div>
+</section>
+
+<section data-label="When Money Moves" data-speaker-notes="The top row is how payment has always worked. Watch HOLD and VERIFY push into the line." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif;">
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 150px; margin: 0; font-size: 62px; font-weight: 600; line-height: 1.12; letter-spacing: -0.025em; color: #5d6f94;">WE DIDN'T CHANGE HOW PEOPLE PAY.</h2>
+  <div data-r="1" style="position: absolute; left: 130px; top: 234px; display: flex; align-items: baseline; gap: 22px; animation-delay: 0.35s;">
+    <span style="font-size: 62px; font-weight: 800; letter-spacing: -0.03em; color: #09165c;">WE CHANGED</span>
+    <span style="font-size: 108px; font-weight: 900; letter-spacing: -0.04em; color: #0e7abf;">WHEN</span>
+    <span style="font-size: 62px; font-weight: 800; letter-spacing: -0.03em; color: #09165c;">MONEY MOVES.</span>
+  </div>
+
+  <div style="position: absolute; left: 130px; top: 470px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #8296b8;">How payment normally works</div>
+  <div data-f="1" style="position: absolute; left: 130px; top: 518px; display: flex; align-items: center; animation-delay: 0.9s;">
+    <div style="width: 300px; height: 80px; display: flex; align-items: center; justify-content: center; background: #ecf6fd; border: 1px solid #dbe8f4; border-radius: 8px; font-size: 30px; font-weight: 700; letter-spacing: 0.06em; color: #5d6f94;">PAY</div>
+    <div style="width: 480px; height: 3px; background: #c5d4e7;"></div>
+    <div style="width: 300px; height: 80px; display: flex; align-items: center; justify-content: center; background: #ecf6fd; border: 1px solid #dbe8f4; border-radius: 8px; font-size: 30px; font-weight: 700; letter-spacing: 0.06em; color: #5d6f94;">RELEASE</div>
+  </div>
+
+  <div style="position: absolute; left: 130px; top: 680px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; color: #0e7abf;">WITH eDAMANA CONDITIONAL SETTLEMENT</div>
+  <div style="position: absolute; left: 130px; top: 728px; display: flex; align-items: center;">
+    <div data-f="1" style="width: 300px; height: 116px; display: flex; align-items: center; justify-content: center; background: #09165c; border-radius: 8px; font-size: 32px; font-weight: 800; letter-spacing: 0.06em; color: #ffffff; animation-delay: 1.4s;">PAY</div>
+    <div data-wx="1" style="width: 70px; height: 3px; background: #00b3ba; animation-delay: 1.7s; animation-duration: 400ms;"></div>
+    <div data-p="1" style="width: 300px; height: 116px; display: flex; align-items: center; justify-content: center; background: #00b3ba; border-radius: 8px; font-size: 32px; font-weight: 800; letter-spacing: 0.06em; color: #09165c; animation-delay: 1.95s;">HOLD</div>
+    <div data-wx="1" style="width: 70px; height: 3px; background: #00b3ba; animation-delay: 2.4s; animation-duration: 400ms;"></div>
+    <div data-p="1" style="width: 300px; height: 116px; display: flex; align-items: center; justify-content: center; background: #00b3ba; border-radius: 8px; font-size: 32px; font-weight: 800; letter-spacing: 0.06em; color: #09165c; animation-delay: 2.65s;">VERIFY</div>
+    <div data-wx="1" style="width: 70px; height: 3px; background: #00b3ba; animation-delay: 3.1s; animation-duration: 400ms;"></div>
+    <div data-f="1" style="width: 300px; height: 116px; display: flex; align-items: center; justify-content: center; background: #09165c; border-radius: 8px; font-size: 32px; font-weight: 800; letter-spacing: 0.06em; color: #ffffff; animation-delay: 3.35s;">RELEASE</div>
+  </div>
+  <p data-r="1" style="position: absolute; left: 130px; top: 910px; margin: 0; width: 1500px; font-size: 30px; font-weight: 400; line-height: 1.45; color: #243360; animation-delay: 3.8s;">Payment happens first. Release happens only when the agreed condition is verified.</p>
+</section>
+
+<section data-label="Became eDamana" data-speaker-notes="The transaction logic collapses into a company. Name the category out loud." style="background: #09165c; overflow: hidden; font-family: Figtree, sans-serif;">
+  <div style="position: absolute; left: 130px; top: 150px; display: flex; align-items: center;">
+    <div data-f="1" style="width: 340px; height: 96px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.26); border-radius: 8px; font-size: 32px; font-weight: 700; letter-spacing: 0.06em; color: #ffffff;">IDENTIFY</div>
+    <div style="width: 100px;"></div>
+    <div data-f="1" style="width: 340px; height: 96px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.26); border-radius: 8px; font-size: 32px; font-weight: 700; letter-spacing: 0.06em; color: #ffffff; animation-delay: 0.15s;">HOLD</div>
+    <div style="width: 100px;"></div>
+    <div data-f="1" style="width: 340px; height: 96px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.26); border-radius: 8px; font-size: 32px; font-weight: 700; letter-spacing: 0.06em; color: #ffffff; animation-delay: 0.3s;">VERIFY</div>
+    <div style="width: 100px;"></div>
+    <div data-f="1" style="width: 340px; height: 96px; display: flex; align-items: center; justify-content: center; background: rgba(0,179,186,0.2); border: 1px solid #00b3ba; border-radius: 8px; font-size: 32px; font-weight: 700; letter-spacing: 0.06em; color: #ffffff; animation-delay: 0.45s;">RELEASE</div>
+  </div>
+
+  <svg viewBox="0 0 1920 1080" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+    <path data-dw="1" d="M 300 246 L 300 330 L 960 400" fill="none" stroke="rgba(0,179,186,0.6)" stroke-width="2" stroke-dasharray="3000" style="animation-delay: 0.9s; animation-duration: 1000ms;"></path>
+    <path data-dw="1" d="M 740 246 L 740 330 L 960 400" fill="none" stroke="rgba(0,179,186,0.6)" stroke-width="2" stroke-dasharray="3000" style="animation-delay: 1.1s; animation-duration: 1000ms;"></path>
+    <path data-dw="1" d="M 1180 246 L 1180 330 L 960 400" fill="none" stroke="rgba(0,179,186,0.6)" stroke-width="2" stroke-dasharray="3000" style="animation-delay: 1.3s; animation-duration: 1000ms;"></path>
+    <path data-dw="1" d="M 1620 246 L 1620 330 L 960 400" fill="none" stroke="rgba(0,179,186,0.6)" stroke-width="2" stroke-dasharray="3000" style="animation-delay: 1.5s; animation-duration: 1000ms;"></path>
+  </svg>
+
+  <div data-p="1" style="position: absolute; left: 890px; top: 400px; width: 140px; height: 140px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #09165c; border: 2px solid #00b3ba; box-shadow: 0 0 70px rgba(0,179,186,0.4); animation-delay: 2.1s;">
+    <img src="assets/ds/symbol-white.svg" data-res="symw" alt="eDamana" style="width: 74px; transform: translate(4px, 0);">
+  </div>
+
+  <h2 data-u="1" style="position: absolute; left: 260px; top: 610px; margin: 0; width: 1400px; text-align: center; font-size: 92px; font-weight: 900; line-height: 1.05; letter-spacing: -0.035em; color: #ffffff; animation-delay: 2.5s;">THAT SIMPLE QUESTION<br>BECAME eDAMANA.</h2>
+  <p data-r="1" style="position: absolute; left: 260px; top: 830px; margin: 0; width: 1400px; text-align: center; font-size: 40px; font-weight: 600; letter-spacing: -0.01em; color: #3ac5cb; animation-delay: 2.9s;">Digital Escrow &amp; Conditional Settlement Infrastructure</p>
+  <p data-f="1" style="position: absolute; left: 360px; top: 910px; margin: 0; width: 1200px; text-align: center; font-size: 28px; font-weight: 400; line-height: 1.5; color: #abc2dc; animation-delay: 3.2s;">A trusted layer connecting people, financial institutions and authoritative sources.</p>
+</section>
+
+<section data-label="The Other 90%" data-speaker-notes="Above the line is what people applaud. Below is what actually took three years." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif;">
+  <div data-act="1" style="position: absolute; left: 130px; top: 96px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #8296b8;">Act III · Making It Real</div>
+  <div data-r="1" style="position: absolute; left: 130px; top: 158px; font-size: 46px; font-weight: 600; letter-spacing: -0.02em; color: #5d6f94;">THE IDEA WAS</div>
+  <div data-u="1" style="position: absolute; left: 124px; top: 196px; font-size: 214px; font-weight: 900; line-height: 1; letter-spacing: -0.045em; color: #09165c; animation-delay: 0.2s;">10%.</div>
+  <div data-r="1" style="position: absolute; left: 1130px; top: 210px; width: 660px; animation-delay: 0.5s;">
+    <div style="font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #0e7abf;">The idea</div>
+    <p style="margin: 20px 0 0; font-size: 40px; font-weight: 600; line-height: 1.25; letter-spacing: -0.015em; color: #09165c;">Protect both sides of a transaction.</p>
+  </div>
+
+  <div data-wx="1" style="position: absolute; left: 0; top: 430px; width: 1920px; height: 5px; background: #00b3ba; animation-delay: 0.9s; animation-duration: 1100ms;"></div>
+  <div data-f="1" style="position: absolute; left: 0; top: 435px; width: 1920px; height: 645px; background: #09165c; animation-delay: 1.1s;">
+    <div style="position: absolute; left: 130px; top: 56px; width: 640px; font-size: 40px; font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; color: #abc2dc;">MAKING IT POSSIBLE WAS THE OTHER</div>
+    <div style="position: absolute; left: 124px; top: 150px; font-size: 226px; font-weight: 900; line-height: 1; letter-spacing: -0.045em; color: #ffffff;">90%.</div>
+    <div style="position: absolute; left: 130px; top: 450px;">
+      <div style="font-size: 40px; font-weight: 600; letter-spacing: -0.015em; color: #8296b8;">IDEAS ARE EXCITING.</div>
+      <div style="margin-top: 12px; font-size: 44px; font-weight: 800; letter-spacing: -0.025em; color: #ffffff;">EXECUTION IS THE WORK.</div>
+    </div>
+    <div style="position: absolute; left: 900px; top: 24px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #3ac5cb;">The real work</div>
+    <div style="position: absolute; left: 900px; top: 80px; width: 890px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 25px;">
+      <div data-p="1" style="height: 105px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.26); border-radius: 8px; font-size: 26px; font-weight: 700; letter-spacing: 0.08em; color: #ffffff; animation-delay: 1.5s;">REGULATION</div>
+      <div data-p="1" style="height: 105px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.26); border-radius: 8px; font-size: 26px; font-weight: 700; letter-spacing: 0.08em; color: #ffffff; animation-delay: 1.62s;">BANKING</div>
+      <div data-p="1" style="height: 105px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.26); border-radius: 8px; font-size: 26px; font-weight: 700; letter-spacing: 0.08em; color: #ffffff; animation-delay: 1.74s;">GOVERNMENT</div>
+      <div data-p="1" style="height: 105px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; font-size: 26px; font-weight: 700; letter-spacing: 0.08em; color: #ffffff; animation-delay: 1.86s;">TECHNOLOGY</div>
+      <div data-p="1" style="height: 105px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; font-size: 26px; font-weight: 700; letter-spacing: 0.08em; color: #ffffff; animation-delay: 1.98s;">COMPLIANCE</div>
+      <div data-p="1" style="height: 105px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; font-size: 24px; font-weight: 700; letter-spacing: 0.06em; color: #ffffff; animation-delay: 2.1s;">CYBERSECURITY</div>
+      <div data-p="1" style="height: 105px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 8px; font-size: 26px; font-weight: 700; letter-spacing: 0.08em; color: #eaf2fb; animation-delay: 2.22s;">INTEGRATIONS</div>
+      <div data-p="1" style="height: 105px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 8px; font-size: 26px; font-weight: 700; letter-spacing: 0.08em; color: #eaf2fb; animation-delay: 2.34s;">FUNDING</div>
+      <div data-p="1" style="height: 105px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 8px; font-size: 26px; font-weight: 700; letter-spacing: 0.08em; color: #eaf2fb; animation-delay: 2.46s;">TESTING</div>
+      <div data-p="1" style="height: 105px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; font-size: 26px; font-weight: 700; letter-spacing: 0.08em; color: #d6e3f2; animation-delay: 2.58s;">TEAM</div>
+      <div data-p="1" style="height: 105px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; font-size: 26px; font-weight: 700; letter-spacing: 0.08em; color: #d6e3f2; animation-delay: 2.7s;">ADOPTION</div>
+      <div data-p="1" style="height: 105px; display: flex; align-items: center; justify-content: center; background: #00b3ba; border-radius: 8px; font-size: 26px; font-weight: 800; letter-spacing: 0.08em; color: #09165c; animation-delay: 2.82s;">TRUST</div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Not Alone" data-speaker-notes="A human pause. The idea was mine; the company never was. Introduce Jasmine and what she owns." style="background: #09165c; overflow: hidden; font-family: Figtree, sans-serif;">
+  <h2 data-u="1" style="position: absolute; left: 130px; top: 250px; margin: 0; width: 860px; font-size: 80px; font-weight: 900; line-height: 1.06; letter-spacing: -0.04em; color: #ffffff;">YOU DON'T BUILD A<br>COMPANY ALONE.</h2>
+  <div data-wx="1" style="position: absolute; left: 130px; top: 486px; width: 120px; height: 4px; background: #00b3ba; animation-delay: 0.5s;"></div>
+  <p data-r="1" style="position: absolute; left: 130px; top: 532px; margin: 0; width: 800px; font-size: 32px; font-weight: 500; line-height: 1.45; color: #abc2dc; animation-delay: 0.65s;">AN IDEA MAY START WITH ONE PERSON.<br>BUILDING A COMPANY NEVER DOES.</p>
+
+  <img data-r="1" src="assets/founders/raed.png" data-res="fraed" alt="Raed Al Dado" style="position: absolute; left: 977px; top: 362px; width: 404px; height: 442px; animation-delay: 0.9s;">
+  <img data-r="1" src="assets/founders/jasmine.png" data-res="fjas" alt="Jasmine Al Mokdad" style="position: absolute; left: 1416px; top: 366px; width: 349px; height: 438px; animation-delay: 1.1s;">
+
+  <div data-r="1" style="position: absolute; left: 990px; top: 828px; width: 380px; animation-delay: 1.5s;">
+    <div style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; color: #ffffff;">RAED AL DADO</div>
+    <div style="margin-top: 8px; font-size: 23px; font-weight: 600; color: #abc2dc;">Founder &amp; CEO</div>
+  </div>
+  <div data-r="1" style="position: absolute; left: 1416px; top: 828px; width: 380px; animation-delay: 1.65s;">
+    <div style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; color: #ffffff;">JASMINE AL MOKDAD</div>
+    <div style="margin-top: 8px; font-size: 23px; font-weight: 600; color: #abc2dc;">Co-Founder &amp; COO</div>
+  </div>
+</section>
+
+<section data-steps="1" data-stage="{{ ecoStage }}" onClick="{{ advanceEco }}" data-label="Ecosystem" data-speaker-notes="Regulation opened the environment. Four institutions each supplied one capability. eDamana is the layer that bound them into a single transaction. Click through it." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif; cursor: pointer;">
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 96px; margin: 0; width: 760px; font-size: 54px; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: #09165c;">IN FINTECH,<br>YOU DON'T BUILD ALONE.</h2>
+
+  <div data-r="1" style="position: absolute; left: 1320px; top: 96px; display: flex; align-items: center; gap: 26px; animation-delay: 0.3s;">
+    <img src="assets/partners/cbj.png" data-res="pcbj" alt="Central Bank of Jordan" style="width: 104px; height: 104px; object-fit: contain;">
+    <div>
+      <div style="font-size: 27px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: #09165c;">Central Bank<br>of Jordan</div>
+      <div style="margin-top: 10px; font-size: 17px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5d6f94;">Regulatory foundation<br>JoRegBox</div>
+    </div>
+  </div>
+
+  <svg viewBox="0 0 1920 1080" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+    <path data-r="1" d="M 130 262 L 130 246 L 1790 246 L 1790 262" fill="none" stroke="#abc2dc" stroke-width="1.5" style="animation-delay: 0.6s;"></path>
+    <path data-from="2" d="M 322 416 L 322 500" fill="none" stroke="#00b3ba" stroke-width="2.5" stroke-dasharray="2400"></path>
+    <path data-from="3" d="M 747 416 L 747 500" fill="none" stroke="#00b3ba" stroke-width="2.5" stroke-dasharray="2400"></path>
+    <path data-from="4" d="M 1172 416 L 1172 500" fill="none" stroke="#00b3ba" stroke-width="2.5" stroke-dasharray="2400"></path>
+    <path data-from="5" d="M 1597 416 L 1597 500" fill="none" stroke="#00b3ba" stroke-width="2.5" stroke-dasharray="2400"></path>
+  </svg>
+
+  <div data-from="1" style="position: absolute; left: 130px; top: 296px; width: 1660px; height: 120px; box-sizing: border-box; padding: 0 44px; display: flex; align-items: center; gap: 28px; background: #09165c;">
+    <img src="assets/ds/symbol-white.svg" data-res="symw" alt="" style="width: 52px;">
+    <span style="font-size: 44px; font-weight: 800; letter-spacing: -0.03em; color: #ffffff;">eDamana</span>
+    <span style="width: 1px; height: 54px; background: rgba(255,255,255,0.28);"></span>
+    <span style="font-size: 22px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #3ac5cb;">The orchestration layer</span>
+    <span style="flex: 1; height: 2px; margin-left: 22px; background: linear-gradient(to right, rgba(0,179,186,0.25), #00b3ba);"></span>
+    <span style="width: 12px; height: 12px; border-radius: 50%; background: #00b3ba;"></span>
+  </div>
+
+  <div data-from="1" style="position: absolute; left: 130px; top: 499px; width: 1660px; height: 3px; background: #dbe8f4;"></div>
+  <div data-from="6" style="position: absolute; left: 130px; top: 499px; width: 1660px; height: 3px; background: #00b3ba;"></div>
+  <div data-from="2" style="position: absolute; left: 312px; top: 490px; width: 20px; height: 20px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="3" style="position: absolute; left: 737px; top: 490px; width: 20px; height: 20px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="4" style="position: absolute; left: 1162px; top: 490px; width: 20px; height: 20px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="5" style="position: absolute; left: 1587px; top: 490px; width: 20px; height: 20px; border-radius: 50%; background: #00b3ba;"></div>
+
+  <div data-from="2" style="position: absolute; left: 130px; top: 536px; width: 385px; text-align: center;">
+    <div style="height: 110px; display: flex; align-items: center; justify-content: center;">
+      <img src="assets/partners/sanad.png" data-res="psanad" alt="Sanad" style="height: 100px; max-width: 340px; object-fit: contain;">
+    </div>
+    <div style="margin-top: 18px; font-size: 34px; font-weight: 800; letter-spacing: -0.02em; color: #09165c;">SANAD</div>
+    <div style="margin-top: 10px; font-size: 21px; font-weight: 600; line-height: 1.3; color: #3f5079;">Digital Identity</div>
+  </div>
+  <div data-from="3" style="position: absolute; left: 555px; top: 536px; width: 385px; text-align: center;">
+    <div style="height: 110px; display: flex; align-items: center; justify-content: center;">
+      <img src="assets/partners/dvld.png" data-res="pdvld" alt="DVLD" style="height: 96px; max-width: 340px; object-fit: contain;">
+    </div>
+    <div style="margin-top: 18px; font-size: 34px; font-weight: 800; letter-spacing: -0.02em; color: #09165c;">DVLD</div>
+    <div style="margin-top: 10px; font-size: 21px; font-weight: 600; line-height: 1.3; color: #3f5079;">Vehicle &amp; Ownership Verification</div>
+  </div>
+  <div data-from="4" style="position: absolute; left: 980px; top: 536px; width: 385px; text-align: center;">
+    <div style="height: 110px; display: flex; align-items: center; justify-content: center;">
+      <img src="assets/partners/arab-bank.png" data-res="pab" alt="Arab Bank" style="height: 80px; max-width: 340px; object-fit: contain;">
+    </div>
+    <div style="margin-top: 18px; font-size: 34px; font-weight: 800; letter-spacing: -0.02em; color: #09165c;">ARAB BANK</div>
+    <div style="margin-top: 10px; font-size: 21px; font-weight: 600; line-height: 1.3; color: #3f5079;">Escrow Banking &amp; Settlement</div>
+  </div>
+  <div data-from="5" style="position: absolute; left: 1405px; top: 536px; width: 385px; text-align: center;">
+    <div style="height: 110px; display: flex; align-items: center; justify-content: center;">
+      <img src="assets/partners/efawateercom.png" data-res="pefaw" alt="eFAWATEERcom" style="height: 56px; max-width: 340px; object-fit: contain;">
+    </div>
+    <div style="margin-top: 18px; font-size: 34px; font-weight: 800; letter-spacing: -0.02em; color: #09165c;">eFAWATEERcom</div>
+    <div style="margin-top: 10px; font-size: 21px; font-weight: 600; line-height: 1.3; color: #3f5079;">Payment Infrastructure</div>
+  </div>
+
+  <div data-from="6" style="position: absolute; left: 130px; top: 800px; font-size: 52px; font-weight: 800; line-height: 1.12; letter-spacing: -0.03em; color: #09165c;">THIS IS WHAT IT TOOK<br>TO MAKE ONE VEHICLE TRANSACTION LIVE.</div>
+  <div data-from="6" style="position: absolute; left: 130px; top: 960px; font-size: 25px; font-weight: 600; line-height: 1.35; color: #5d6f94;">Your product is only as strong as the ecosystem that trusts it.</div>
+</section>
+
+<section data-steps="1" data-stage="{{ appStage }}" onClick="{{ advanceApp }}" data-label="Real Product" data-speaker-notes="Click through the four screens. This is the shipped product, not a concept — the transaction on screen is a real one." style="background: #09165c; overflow: hidden; font-family: Figtree, sans-serif; cursor: pointer;">
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 108px; margin: 0; font-size: 54px; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: #ffffff;">FROM INFRASTRUCTURE<br>TO A LIVE TRANSACTION.</h2>
+
+  <div style="position: absolute; left: 280px; top: 446px; width: 1359px; height: 2px; background: rgba(255,255,255,0.16);"></div>
+  <div data-from="2" style="position: absolute; left: 280px; top: 446px; width: 453px; height: 2px; background: #00b3ba;"></div>
+  <div data-from="3" style="position: absolute; left: 733px; top: 446px; width: 453px; height: 2px; background: #00b3ba;"></div>
+  <div data-from="4" style="position: absolute; left: 1186px; top: 446px; width: 453px; height: 2px; background: #00b3ba;"></div>
+
+  <div data-from="1" style="position: absolute; left: 270px; top: 437px; width: 20px; height: 20px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="2" style="position: absolute; left: 723px; top: 437px; width: 20px; height: 20px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="3" style="position: absolute; left: 1176px; top: 437px; width: 20px; height: 20px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="4" style="position: absolute; left: 1625px; top: 433px; width: 28px; height: 28px; border-radius: 50%; background: #00b3ba; box-shadow: 0 0 0 9px rgba(0,179,186,0.2);"></div>
+
+  <div data-from="1" style="position: absolute; left: 130px; top: 244px; width: 300px; height: 150px; text-align: center;">
+    <div style="font-size: 21px; font-weight: 700; letter-spacing: 0.16em; color: #3ac5cb;">01</div>
+    <div style="margin-top: 12px; font-size: 34px; font-weight: 800; letter-spacing: -0.025em; color: #ffffff;">INITIATE</div>
+    <div style="margin-top: 10px; font-size: 21px; font-weight: 400; line-height: 1.35; color: #abc2dc;">Seller starts the transaction.</div>
+  </div>
+  <div data-from="1" style="position: absolute; left: 160px; top: 504px; width: 240px; height: 456px;">
+    <img src="assets/app/initiate.png" data-res="ainit" alt="INITIATE — seller starts the transaction" style="width: 240px; height: 448px; object-fit: contain;">
+  </div>
+  <div data-from="2" style="position: absolute; left: 583px; top: 244px; width: 300px; height: 150px; text-align: center;">
+    <div style="font-size: 21px; font-weight: 700; letter-spacing: 0.16em; color: #3ac5cb;">02</div>
+    <div style="margin-top: 12px; font-size: 34px; font-weight: 800; letter-spacing: -0.025em; color: #ffffff;">VERIFY</div>
+    <div style="margin-top: 10px; font-size: 21px; font-weight: 400; line-height: 1.35; color: #abc2dc;">Vehicle and transaction details are validated.</div>
+  </div>
+  <div data-from="2" style="position: absolute; left: 613px; top: 504px; width: 240px; height: 456px;">
+    <img src="assets/app/verify.png" data-res="averf" alt="VERIFY — vehicle and transaction details" style="width: 240px; height: 448px; object-fit: contain;">
+  </div>
+  <div data-from="3" style="position: absolute; left: 1036px; top: 244px; width: 300px; height: 150px; text-align: center;">
+    <div style="font-size: 21px; font-weight: 700; letter-spacing: 0.16em; color: #3ac5cb;">03</div>
+    <div style="margin-top: 12px; font-size: 34px; font-weight: 800; letter-spacing: -0.025em; color: #ffffff;">SECURE</div>
+    <div style="margin-top: 10px; font-size: 21px; font-weight: 400; line-height: 1.35; color: #abc2dc;">Buyer payment is secured.</div>
+  </div>
+  <div data-from="3" style="position: absolute; left: 1066px; top: 504px; width: 240px; height: 456px;">
+    <img src="assets/app/secure.png" data-res="asecu" alt="SECURE — buyer payment secured" style="width: 240px; height: 448px; object-fit: contain;">
+  </div>
+  <div data-from="4" style="position: absolute; left: 1489px; top: 244px; width: 300px; height: 150px; text-align: center;">
+    <div style="font-size: 21px; font-weight: 700; letter-spacing: 0.16em; color: #3ac5cb;">04</div>
+    <div style="margin-top: 12px; font-size: 34px; font-weight: 800; letter-spacing: -0.025em; color: #ffffff;">COMPLETE</div>
+    <div style="margin-top: 10px; font-size: 21px; font-weight: 400; line-height: 1.35; color: #abc2dc;">Verified transfer triggers release.</div>
+  </div>
+  <div data-from="4" style="position: absolute; left: 1519px; top: 504px; width: 240px; height: 456px;">
+    <img src="assets/app/complete.png" data-res="acomp" alt="COMPLETE — verified transfer, funds released" style="width: 240px; height: 448px; object-fit: contain;">
+  </div>
+
+  <div style="position: absolute; left: 130px; top: 990px; font-size: 22px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #3ac5cb;">Phase one · Vehicle transactions</div>
+  <div style="position: absolute; right: 130px; top: 992px; font-size: 19px; font-weight: 400; letter-spacing: 0.02em; color: #8296b8;">Powered by the same trust logic: IDENTIFY &#8594; HOLD &#8594; VERIFY &#8594; RELEASE</div>
+</section>
+
+<section data-steps="1" data-stage="{{ jstage }}" onClick="{{ advanceJourney }}" data-label="First Live Transaction" data-speaker-notes="Click to advance one milestone at a time. The dashed line is the plan; the solid line is what actually happened. Dwell on the five-year gap and on the sandbox gate." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif; cursor: pointer;">
+  <div data-act="1" style="position: absolute; left: 130px; top: 96px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #8296b8;">Act IV · Proving It</div>
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 150px; margin: 0; width: 820px; font-size: 62px; font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; color: #09165c;">FROM &ldquo;WHAT IF?&rdquo;<br>TO A REAL TRANSACTION.</h2>
+  <div data-r="1" style="position: absolute; left: 1000px; top: 158px; width: 500px; text-align: right; animation-delay: 0.3s;">
+    <div style="font-size: 34px; font-weight: 600; letter-spacing: -0.02em; color: #5d6f94;">THE DESTINATION WAS CLEAR.</div>
+    <div style="margin-top: 6px; font-size: 34px; font-weight: 800; letter-spacing: -0.02em; color: #09165c;">THE PATH WAS NOT.</div>
+  </div>
+
+  <div style="position: absolute; left: 1520px; top: 0; width: 400px; height: 1080px; background: #09165c;"></div>
+
+  <div style="position: absolute; left: 170px; top: 599px; width: 1350px; height: 0; border-top: 2px dashed #c5d4e7;"></div>
+
+  <svg viewBox="0 0 1920 1080" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+    <path data-from="2" d="M 170 600 L 290 600 L 310 700 L 500 700 L 520 640 L 640 640 L 660 600 L 590 600 L 590 545 L 700 545 L 700 600" fill="none" stroke="#00b3ba" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2400"></path>
+    <path data-from="3" d="M 700 600 L 780 600 L 800 655 L 865 655 L 890 600" fill="none" stroke="#00b3ba" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2400"></path>
+    <path data-from="4" d="M 890 600 L 1066 600" fill="none" stroke="#00b3ba" stroke-width="4" stroke-linecap="round" stroke-dasharray="2400"></path>
+    <path data-from="5" d="M 1092 600 C 1136 600 1136 520 1180 520 L 1200 520 C 1244 520 1244 600 1270 600" fill="none" stroke="#00b3ba" stroke-width="3" stroke-linecap="round" stroke-dasharray="2400"></path>
+    <path data-from="5" d="M 1092 600 L 1270 600" fill="none" stroke="#00b3ba" stroke-width="4" stroke-linecap="round" stroke-dasharray="2400"></path>
+    <path data-from="5" d="M 1092 600 C 1136 600 1136 690 1180 690 L 1200 690 C 1244 690 1244 600 1270 600" fill="none" stroke="#00b3ba" stroke-width="3" stroke-linecap="round" stroke-dasharray="2400"></path>
+    <path data-from="6" d="M 1270 600 L 1430 600" fill="none" stroke="#00b3ba" stroke-width="4" stroke-linecap="round" stroke-dasharray="2400"></path>
+    <circle data-from="6" cx="1296" cy="575" r="25" fill="none" stroke="#00b3ba" stroke-width="3" stroke-dasharray="2400"></circle>
+    <circle data-from="6" cx="1350" cy="575" r="25" fill="none" stroke="#00b3ba" stroke-width="3" stroke-dasharray="2400"></circle>
+    <circle data-from="6" cx="1404" cy="575" r="25" fill="none" stroke="#00b3ba" stroke-width="3" stroke-dasharray="2400"></circle>
+    <path data-from="7" d="M 1430 600 L 1520 600" fill="none" stroke="#00b3ba" stroke-width="6" stroke-linecap="round" stroke-dasharray="2400"></path>
+  </svg>
+
+  <div data-from="1" style="position: absolute; left: 82px; top: 395px; width: 176px; height: 105px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center;">
+    <div style="font-size: 21px; font-weight: 700; letter-spacing: 0.14em; color: #0e7abf;">2017</div>
+    <div style="margin-top: 10px; font-size: 26px; font-weight: 800; line-height: 1.15; letter-spacing: -0.015em; color: #09165c;">PROBLEM</div>
+  </div>
+  <div data-from="1" style="position: absolute; left: 170px; top: 508px; width: 1px; height: 80px; background: #c5d4e7;"></div>
+  <div data-from="1" style="position: absolute; left: 160px; top: 590px; width: 20px; height: 20px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="2" style="position: absolute; left: 612px; top: 395px; width: 176px; height: 105px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center;">
+    <div style="font-size: 21px; font-weight: 700; letter-spacing: 0.14em; color: #0e7abf;">2022</div>
+    <div style="margin-top: 10px; font-size: 26px; font-weight: 800; line-height: 1.15; letter-spacing: -0.015em; color: #09165c;">IDEA</div>
+  </div>
+  <div data-from="2" style="position: absolute; left: 700px; top: 508px; width: 1px; height: 80px; background: #c5d4e7;"></div>
+  <div data-from="2" style="position: absolute; left: 690px; top: 590px; width: 20px; height: 20px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="3" style="position: absolute; left: 802px; top: 395px; width: 176px; height: 105px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center;">
+    <div style="font-size: 21px; font-weight: 700; letter-spacing: 0.14em; color: #0e7abf;">2023</div>
+    <div style="margin-top: 10px; font-size: 26px; font-weight: 800; line-height: 1.15; letter-spacing: -0.015em; color: #09165c;">PRODUCT</div>
+  </div>
+  <div data-from="3" style="position: absolute; left: 890px; top: 508px; width: 1px; height: 80px; background: #c5d4e7;"></div>
+  <div data-from="3" style="position: absolute; left: 880px; top: 590px; width: 20px; height: 20px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="4" style="position: absolute; left: 992px; top: 395px; width: 176px; height: 105px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center;">
+    <div style="font-size: 21px; font-weight: 700; letter-spacing: 0.14em; color: #0e7abf;">2024</div>
+    <div style="margin-top: 10px; font-size: 26px; font-weight: 800; line-height: 1.15; letter-spacing: -0.015em; color: #09165c;">REGULATORY SANDBOX</div>
+  </div>
+  <div data-from="4" style="position: absolute; left: 1080px; top: 508px; width: 1px; height: 12px; background: #c5d4e7;"></div>
+  <div data-from="4" style="position: absolute; left: 1074px; top: 520px; width: 12px; height: 66px; background: #09165c;"></div>
+  <div data-from="4" style="position: absolute; left: 1074px; top: 614px; width: 12px; height: 66px; background: #09165c;"></div>
+  <div data-from="5" style="position: absolute; left: 1074px; top: 586px; width: 12px; height: 28px; background: #00b3ba;"></div>
+  <div data-from="5" style="position: absolute; left: 1182px; top: 395px; width: 176px; height: 105px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center;">
+    <div style="font-size: 21px; font-weight: 700; letter-spacing: 0.14em; color: #0e7abf;">2024</div>
+    <div style="margin-top: 10px; font-size: 26px; font-weight: 800; line-height: 1.15; letter-spacing: -0.015em; color: #09165c;">INTEGRATIONS</div>
+  </div>
+  <div data-from="5" style="position: absolute; left: 1270px; top: 508px; width: 1px; height: 80px; background: #c5d4e7;"></div>
+  <div data-from="5" style="position: absolute; left: 1260px; top: 590px; width: 20px; height: 20px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="6" style="position: absolute; left: 1342px; top: 395px; width: 176px; height: 105px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center;">
+    <div style="font-size: 21px; font-weight: 700; letter-spacing: 0.14em; color: #0e7abf;">2025</div>
+    <div style="margin-top: 10px; font-size: 26px; font-weight: 800; line-height: 1.15; letter-spacing: -0.015em; color: #09165c;">TESTING</div>
+  </div>
+  <div data-from="6" style="position: absolute; left: 1430px; top: 508px; width: 1px; height: 42px; background: #c5d4e7;"></div>
+  <div data-from="6" style="position: absolute; left: 1420px; top: 590px; width: 20px; height: 20px; border-radius: 50%; background: #00b3ba;"></div>
+
+  <div data-from="7" style="position: absolute; left: 1505px; top: 585px; width: 30px; height: 30px; border-radius: 50%; background: #00b3ba; box-shadow: 0 0 0 10px rgba(0,179,186,0.2);"></div>
+
+  <div style="position: absolute; left: 170px; top: 782px; width: 1px; height: 17px; background: #abc2dc;"></div>
+  <div style="position: absolute; left: 700px; top: 782px; width: 1px; height: 17px; background: #abc2dc;"></div>
+  <div style="position: absolute; left: 170px; top: 790px; width: 530px; height: 1px; background: #abc2dc;"></div>
+  <div style="position: absolute; left: 170px; top: 812px; width: 530px; text-align: center; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #5d6f94;">Five years</div>
+
+  <div style="position: absolute; left: 1570px; top: 372px; font-size: 56px; font-weight: 900; line-height: 1; letter-spacing: -0.035em; color: #ffffff;">AUGUST</div>
+  <div style="position: absolute; left: 1562px; top: 442px; font-size: 122px; font-weight: 900; line-height: 1; letter-spacing: -0.045em; color: #ffffff;">2025</div>
+  <div data-from="7" style="position: absolute; left: 1570px; top: 612px; width: 300px; height: 4px; background: #00b3ba;"></div>
+  <div data-arrive="1" style="position: absolute; left: 1570px; top: 644px; width: 300px; font-size: 30px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; color: #3ac5cb;">FIRST LIVE TRANSACTION</div>
+</section>
+
+<section data-label="Changed The Question" data-speaker-notes="One transaction retired the first question permanently. Pause between the two." style="background: #09165c; overflow: hidden; font-family: Figtree, sans-serif;">
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 150px; margin: 0; font-size: 52px; font-weight: 600; line-height: 1.14; letter-spacing: -0.02em; color: #abc2dc;">THE FIRST LIVE TRANSACTION<br>CHANGED THE QUESTION.</h2>
+
+  <div style="position: absolute; left: 130px; top: 470px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #8296b8;">Before</div>
+  <div data-lit="1" style="position: absolute; left: 130px; top: 516px; width: 630px; font-size: 78px; font-weight: 800; line-height: 1.07; letter-spacing: -0.03em; color: #8296b8; animation-delay: 1.9s;">CAN THIS WORK?</div>
+
+  <svg data-dw="1" viewBox="0 0 1920 1080" style="position: absolute; inset: 0; width: 100%; height: 100%; animation-delay: 2.5s; animation-duration: 900ms;">
+    <path d="M 810 596 L 960 596 M 928 578 L 962 596 L 928 614" fill="none" stroke="#00b3ba" stroke-width="4" stroke-linecap="round" stroke-dasharray="3000"></path>
+  </svg>
+
+  <div style="position: absolute; left: 1020px; top: 400px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #3ac5cb;">After</div>
+  <div data-u="1" style="position: absolute; left: 1014px; top: 440px; font-size: 122px; font-weight: 900; line-height: 1.02; letter-spacing: -0.04em; color: #ffffff; animation-delay: 3.05s;">WHERE ELSE</div>
+  <div data-r="1" style="position: absolute; left: 1020px; top: 580px; width: 780px; font-size: 76px; font-weight: 700; line-height: 1.08; letter-spacing: -0.03em; color: #ffffff; animation-delay: 3.35s;">CAN THIS WORK?</div>
+  <p data-f="1" style="position: absolute; left: 1020px; top: 730px; margin: 0; font-size: 30px; font-weight: 400; color: #7adcdf; animation-delay: 3.8s;">Proof changes the conversation.</p>
+</section>
+
+<section data-steps="1" data-stage="{{ proofStage }}" onClick="{{ advanceProof }}" data-label="Proof Not Limit" data-speaker-notes="Vehicles went live, got tested, got integrated, got proven. Then the question stopped being whether it works." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif; cursor: pointer;">
+  <div data-act="1" style="position: absolute; left: 130px; top: 96px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #8296b8;">Act V · The Bigger Discovery</div>
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 180px; margin: 0; font-size: 58px; font-weight: 600; letter-spacing: -0.025em; color: #5d6f94;">VEHICLES WERE THE PROOF.</h2>
+  <div data-u="1" style="position: absolute; left: 124px; top: 244px; font-size: 152px; font-weight: 900; line-height: 1; letter-spacing: -0.045em; color: #09165c; animation-delay: 0.35s;">NOT THE LIMIT.</div>
+
+  <div data-from="1" style="position: absolute; left: 130px; top: 560px; display: flex; align-items: center; gap: 16px;">
+    <span style="width: 14px; height: 14px; border-radius: 50%; background: #00b3ba;"></span>
+    <span style="font-size: 28px; font-weight: 800; letter-spacing: 0.1em; color: #09165c;">LIVE</span>
+  </div>
+  <div data-from="1" style="position: absolute; left: 430px; top: 560px; display: flex; align-items: center; gap: 16px;">
+    <span style="width: 14px; height: 14px; border-radius: 50%; background: #00b3ba;"></span>
+    <span style="font-size: 28px; font-weight: 800; letter-spacing: 0.1em; color: #09165c;">TESTED</span>
+  </div>
+  <div data-from="1" style="position: absolute; left: 730px; top: 560px; display: flex; align-items: center; gap: 16px;">
+    <span style="width: 14px; height: 14px; border-radius: 50%; background: #00b3ba;"></span>
+    <span style="font-size: 28px; font-weight: 800; letter-spacing: 0.1em; color: #09165c;">INTEGRATED</span>
+  </div>
+  <div data-from="1" style="position: absolute; left: 1030px; top: 560px; display: flex; align-items: center; gap: 16px;">
+    <span style="width: 14px; height: 14px; border-radius: 50%; background: #00b3ba;"></span>
+    <span style="font-size: 28px; font-weight: 800; letter-spacing: 0.1em; color: #09165c;">PROVEN</span>
+  </div>
+
+  <svg viewBox="0 0 1920 1080" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+    <path data-from="2" d="M 130 700 L 1080 700" fill="none" stroke="#00b3ba" stroke-width="4" stroke-linecap="round" stroke-dasharray="2400"></path>
+    <path data-from="2" d="M 1080 700 C 1300 700 1420 596 1660 580" fill="none" stroke="#abc2dc" stroke-width="2" stroke-dasharray="2400"></path>
+    <path data-from="2" d="M 1080 700 L 1660 700" fill="none" stroke="#abc2dc" stroke-width="2" stroke-dasharray="2400"></path>
+    <path data-from="2" d="M 1080 700 C 1300 700 1420 804 1660 820" fill="none" stroke="#abc2dc" stroke-width="2" stroke-dasharray="2400"></path>
+  </svg>
+  <div data-from="2" style="position: absolute; left: 1068px; top: 688px; width: 24px; height: 24px; border-radius: 50%; background: #00b3ba;"></div>
+
+  <div data-from="3" style="position: absolute; left: 130px; top: 850px; font-size: 40px; font-weight: 600; letter-spacing: -0.02em; color: #5d6f94;">THE FIRST USE CASE PROVED THE MODEL.</div>
+  <div data-from="3" style="position: absolute; left: 130px; top: 912px; width: 900px; font-size: 48px; font-weight: 800; line-height: 1.12; letter-spacing: -0.025em; color: #09165c;">THEN WE REALIZED THE MODEL COULD GO FURTHER.</div>
+</section>
+
+<section data-steps="1" data-stage="{{ beyondStage }}" onClick="{{ advanceBeyond }}" data-label="One Trust Engine" data-speaker-notes="One infrastructure. Vehicles is the branch already proven; the rest are the same four steps on a different transaction." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif; cursor: pointer;">
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 120px; margin: 0; font-size: 52px; font-weight: 600; letter-spacing: -0.025em; color: #5d6f94;">THE TRANSACTION CHANGES.</h2>
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 186px; margin: 0; font-size: 52px; font-weight: 800; letter-spacing: -0.03em; color: #09165c; animation-delay: 0.3s;">THE TRUST PROBLEM DOESN'T.</h2>
+
+  <div data-from="1" style="position: absolute; left: 130px; top: 506px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #0e7abf;">One trust infrastructure</div>
+  <div data-from="1" style="position: absolute; left: 130px; top: 552px; width: 790px; height: 8px; background: #09165c;"></div>
+  <div data-from="1" style="position: absolute; left: 228px; top: 545px; width: 22px; height: 22px; border-radius: 50%; background: #00b3ba; box-shadow: 0 0 0 7px rgba(0,179,186,0.18);"></div>
+  <div data-from="1" style="position: absolute; left: 238px; top: 574px; width: 2px; height: 30px; background: #00b3ba;"></div>
+  <div data-from="1" style="position: absolute; left: 130px; top: 612px; font-size: 46px; font-weight: 800; letter-spacing: -0.03em; color: #09165c;">VEHICLES</div>
+  <div data-from="1" style="position: absolute; left: 130px; top: 684px; padding: 9px 20px; background: #00b3ba; border-radius: 6px; font-size: 20px; font-weight: 800; letter-spacing: 0.16em; color: #09165c;">PROVEN</div>
+
+  <div data-from="2" style="position: absolute; left: 1128px; top: 144px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #0e7abf;">Multiple transaction types</div>
+
+  <svg viewBox="0 0 1920 1080" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+    <path data-from="2" d="M 920 560 C 1010 560 1010 224 1090 224" fill="none" stroke="#abc2dc" stroke-width="2" stroke-dasharray="2400"></path>
+    <path data-from="2" d="M 920 560 C 1010 560 1010 336 1090 336" fill="none" stroke="#abc2dc" stroke-width="2" stroke-dasharray="2400"></path>
+    <path data-from="2" d="M 920 560 C 1010 560 1010 448 1090 448" fill="none" stroke="#abc2dc" stroke-width="2" stroke-dasharray="2400"></path>
+    <path data-from="3" d="M 920 560 C 1010 560 1010 560 1090 560" fill="none" stroke="#abc2dc" stroke-width="2" stroke-dasharray="2400"></path>
+    <path data-from="3" d="M 920 560 C 1010 560 1010 672 1090 672" fill="none" stroke="#abc2dc" stroke-width="2" stroke-dasharray="2400"></path>
+    <path data-from="3" d="M 920 560 C 1010 560 1010 784 1090 784" fill="none" stroke="#abc2dc" stroke-width="2" stroke-dasharray="2400"></path>
+  </svg>
+  <div data-from="2" style="position: absolute; left: 1083px; top: 217px; width: 14px; height: 14px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="2" style="position: absolute; left: 1083px; top: 329px; width: 14px; height: 14px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="2" style="position: absolute; left: 1083px; top: 441px; width: 14px; height: 14px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="3" style="position: absolute; left: 1083px; top: 553px; width: 14px; height: 14px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="3" style="position: absolute; left: 1083px; top: 665px; width: 14px; height: 14px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="3" style="position: absolute; left: 1083px; top: 777px; width: 14px; height: 14px; border-radius: 50%; background: #00b3ba;"></div>
+  <div data-from="2" style="position: absolute; left: 1128px; top: 200px; width: 660px; font-size: 36px; font-weight: 700; letter-spacing: -0.015em; color: #09165c;">REAL ESTATE</div>
+  <div data-from="2" style="position: absolute; left: 1128px; top: 312px; width: 660px; font-size: 36px; font-weight: 700; letter-spacing: -0.015em; color: #09165c;">SERVICES</div>
+  <div data-from="2" style="position: absolute; left: 1128px; top: 424px; width: 660px; font-size: 36px; font-weight: 700; letter-spacing: -0.015em; color: #09165c;">CONTRACTORS</div>
+  <div data-from="3" style="position: absolute; left: 1128px; top: 536px; width: 660px; font-size: 36px; font-weight: 700; letter-spacing: -0.015em; color: #09165c;">MARKETPLACES</div>
+  <div data-from="3" style="position: absolute; left: 1128px; top: 648px; width: 660px; font-size: 36px; font-weight: 700; letter-spacing: -0.015em; color: #09165c;">B2B</div>
+  <div data-from="3" style="position: absolute; left: 1128px; top: 760px; width: 660px; font-size: 36px; font-weight: 700; letter-spacing: -0.015em; color: #09165c;">GOVERNMENT TRANSACTIONS</div>
+
+  <p data-from="4" style="position: absolute; left: 130px; top: 840px; margin: 0; font-size: 32px; font-weight: 400; line-height: 1.4; color: #3f5079;">Different transaction.<br>Same need for trust.</p>
+</section>
+
+<section data-label="Infrastructure For Trust" data-speaker-notes="Everything resolves here. Say the first line, wait, then say the second. Nothing else on this slide." style="background: #09165c; overflow: hidden; font-family: Figtree, sans-serif;">
+  <div data-lit="1" style="position: absolute; left: 130px; top: 150px; width: 1200px; font-size: 56px; font-weight: 600; line-height: 1.14; letter-spacing: -0.02em; color: #8296b8; animation-delay: 2.4s;">WE STARTED<br>BY SOLVING<br>A VEHICLE TRANSACTION.</div>
+  <div data-u="1" style="position: absolute; left: 130px; top: 430px; font-size: 74px; font-weight: 700; letter-spacing: -0.03em; color: #ffffff; animation-delay: 2.9s;">WE WERE BUILDING</div>
+  <div data-u="1" style="position: absolute; left: 122px; top: 520px; font-size: 178px; font-weight: 900; line-height: 1.04; letter-spacing: -0.05em; color: #ffffff; animation-delay: 3.2s;">INFRASTRUCTURE</div>
+  <div data-u="1" style="position: absolute; left: 122px; top: 706px; font-size: 178px; font-weight: 900; line-height: 1.04; letter-spacing: -0.05em; color: #ffffff; animation-delay: 3.45s;">FOR TRUST.</div>
+  <div data-wx="1" style="position: absolute; left: 0; top: 920px; width: 1920px; height: 5px; background: #00b3ba; animation-delay: 3.9s; animation-duration: 1200ms;"></div>
+  <p data-f="1" style="position: absolute; left: 130px; top: 960px; margin: 0; font-size: 32px; font-weight: 600; letter-spacing: -0.005em; color: #3ac5cb; animation-delay: 4.4s;">Digital Escrow &amp; Conditional Settlement Infrastructure</p>
+</section>
+
+<section data-label="Every No" data-speaker-notes="Five blocks, five reroutes. Point at the monolith — it never moves." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif;">
+  <div data-act="1" style="position: absolute; left: 130px; top: 96px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #8296b8;">Act VI · What Building Looks Like</div>
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 158px; margin: 0; font-size: 58px; font-weight: 600; line-height: 1.16; letter-spacing: -0.025em; color: #5d6f94;">EVERY &ldquo;NO&rdquo; CHANGED THE PLAN.</h2>
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 232px; margin: 0; font-size: 58px; font-weight: 800; line-height: 1.16; letter-spacing: -0.03em; color: #09165c; animation-delay: 0.3s;">NONE CHANGED THE MISSION.</h2>
+
+  <div data-p="1" style="position: absolute; left: 1660px; top: 330px; width: 130px; height: 570px; display: flex; align-items: center; justify-content: center; background: #09165c; border-radius: 10px; animation-delay: 0.6s;">
+    <img src="assets/ds/symbol-white.svg" data-res="symw" alt="" style="width: 62px;">
+  </div>
+  <div style="position: absolute; left: 1560px; top: 920px; width: 230px; text-align: center; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #09165c;">The mission</div>
+
+  <div data-f="1" style="position: absolute; left: 305px; top: 768px; width: 170px; height: 64px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; text-align: center; background: #ecf6fd; border: 1px solid #c5d4e7; border-radius: 6px; font-size: 20px; font-weight: 700; line-height: 1.15; letter-spacing: 0.1em; text-transform: uppercase; color: #5d6f94; animation-delay: 1.2s;">Regulation</div>
+  <div data-f="1" style="position: absolute; left: 585px; top: 698px; width: 170px; height: 64px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; text-align: center; background: #ecf6fd; border: 1px solid #c5d4e7; border-radius: 6px; font-size: 20px; font-weight: 700; line-height: 1.15; letter-spacing: 0.1em; text-transform: uppercase; color: #5d6f94; animation-delay: 1.65s;">Integrations</div>
+  <div data-f="1" style="position: absolute; left: 865px; top: 628px; width: 170px; height: 64px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; text-align: center; background: #ecf6fd; border: 1px solid #c5d4e7; border-radius: 6px; font-size: 20px; font-weight: 700; line-height: 1.15; letter-spacing: 0.1em; text-transform: uppercase; color: #5d6f94; animation-delay: 2.1s;">Market</div>
+  <div data-f="1" style="position: absolute; left: 1145px; top: 558px; width: 170px; height: 64px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; text-align: center; background: #ecf6fd; border: 1px solid #c5d4e7; border-radius: 6px; font-size: 20px; font-weight: 700; line-height: 1.15; letter-spacing: 0.1em; text-transform: uppercase; color: #5d6f94; animation-delay: 2.55s;">Funding</div>
+  <div data-f="1" style="position: absolute; left: 1425px; top: 488px; width: 170px; height: 64px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; text-align: center; background: #ecf6fd; border: 1px solid #c5d4e7; border-radius: 6px; font-size: 20px; font-weight: 700; line-height: 1.15; letter-spacing: 0.1em; text-transform: uppercase; color: #5d6f94; animation-delay: 3s;">Time</div>
+
+  <svg viewBox="0 0 1920 1080" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+    <path data-dw="1" d="M 130 800 H 300 V 730 H 580 V 660 H 860 V 590 H 1140 V 520 H 1420 V 450 H 1660" fill="none" stroke="#00b3ba" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3000" style="animation-delay: 1s; animation-duration: 3000ms;"></path>
+  </svg>
+
+  <div data-r="1" style="position: absolute; left: 280px; top: 856px; width: 220px; text-align: center; font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #09165c; animation-delay: 1.5s;">WE ENGAGED.</div>
+  <div data-r="1" style="position: absolute; left: 560px; top: 786px; width: 220px; text-align: center; font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #09165c; animation-delay: 1.95s;">WE BUILT.</div>
+  <div data-r="1" style="position: absolute; left: 840px; top: 716px; width: 220px; text-align: center; font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #09165c; animation-delay: 2.4s;">WE TESTED.</div>
+  <div data-r="1" style="position: absolute; left: 1120px; top: 646px; width: 220px; text-align: center; font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #09165c; animation-delay: 2.85s;">WE ADAPTED.</div>
+  <div data-r="1" style="position: absolute; left: 1400px; top: 576px; width: 220px; text-align: center; font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #09165c; animation-delay: 3.3s;">WE KEPT MOVING.</div>
+
+  <div data-r="1" style="position: absolute; left: 130px; top: 968px; font-size: 44px; font-weight: 800; letter-spacing: -0.025em; color: #09165c; animation-delay: 4s;">PERSISTENCE IS ADAPTING WITHOUT ABANDONING THE GOAL.</div>
+</section>
+
+<section data-label="Nobody Posts About" data-speaker-notes="Slow down. Read them one at a time and let the room recognise themselves." style="background: #09165c; overflow: hidden; font-family: Figtree, sans-serif;">
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 170px; margin: 0; font-size: 80px; font-weight: 800; line-height: 1.06; letter-spacing: -0.03em; color: #ffffff;">THE PART<br>NOBODY POSTS ABOUT.</h2>
+
+  <div style="position: absolute; left: 130px; top: 450px; width: 1030px;">
+    <div data-f="1" style="height: 78px; display: flex; align-items: center; border-top: 1px solid rgba(255,255,255,0.14); font-size: 35px; font-weight: 400; color: #c5d4e7; animation-delay: 0.8s; animation-duration: 1000ms;">The meeting that gets postponed.</div>
+    <div data-f="1" style="height: 78px; display: flex; align-items: center; border-top: 1px solid rgba(255,255,255,0.14); font-size: 35px; font-weight: 400; color: #c5d4e7; animation-delay: 1.15s; animation-duration: 1000ms;">The integration that takes months instead of weeks.</div>
+    <div data-f="1" style="height: 78px; display: flex; align-items: center; border-top: 1px solid rgba(255,255,255,0.14); font-size: 35px; font-weight: 400; color: #c5d4e7; animation-delay: 1.5s; animation-duration: 1000ms;">The investor who says no.</div>
+    <div data-f="1" style="height: 78px; display: flex; align-items: center; border-top: 1px solid rgba(255,255,255,0.14); font-size: 35px; font-weight: 400; color: #c5d4e7; animation-delay: 1.85s; animation-duration: 1000ms;">The product you have to rebuild.</div>
+    <div data-f="1" style="height: 78px; display: flex; align-items: center; border-top: 1px solid rgba(255,255,255,0.14); font-size: 35px; font-weight: 400; color: #c5d4e7; animation-delay: 2.2s; animation-duration: 1000ms;">The partner who changes direction.</div>
+    <div data-f="1" style="height: 78px; display: flex; align-items: center; border-top: 1px solid rgba(255,255,255,0.14); border-bottom: 1px solid rgba(255,255,255,0.14); font-size: 35px; font-weight: 400; color: #c5d4e7; animation-delay: 2.55s; animation-duration: 1000ms;">The month when everything seems to stop.</div>
+  </div>
+
+  <div data-r="1" style="position: absolute; left: 1250px; top: 540px; width: 540px; font-size: 62px; font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; color: #ffffff; animation-delay: 3.2s;">THIS IS WHERE COMPANIES ARE ACTUALLY BUILT.</div>
+</section>
+
+<section data-label="Credibility Compounds" data-speaker-notes="Start at the single node. Each proof point adds a connection to everything already there." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif;">
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 170px; margin: 0; width: 660px; font-size: 56px; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: #09165c;">AT THE BEGINNING, WE HAD NO TRACK RECORD.</h2>
+  <p data-r="1" style="position: absolute; left: 130px; top: 360px; margin: 0; width: 640px; font-size: 31px; font-weight: 400; line-height: 1.45; color: #3f5079; animation-delay: 0.25s;">No transactions. No proof the model would work. No history to point to.</p>
+  <div data-r="1" style="position: absolute; left: 130px; top: 520px; width: 660px; font-size: 44px; font-weight: 800; line-height: 1.15; letter-spacing: -0.025em; color: #09165c; animation-delay: 0.45s;">WE HAD TO EARN CREDIBILITY.</div>
+  <div data-r="1" style="position: absolute; left: 130px; top: 750px; animation-delay: 3.4s;">
+    <div style="font-size: 52px; font-weight: 800; letter-spacing: -0.03em; color: #09165c;">CREDIBILITY COMPOUNDS.</div>
+    <p style="margin: 22px 0 0; width: 620px; font-size: 30px; font-weight: 400; line-height: 1.45; color: #3f5079;">Every proof point makes the next &ldquo;YES&rdquo; easier.</p>
+  </div>
+
+  <svg viewBox="0 0 1920 1080" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+    <path data-dw="1" d="M 900 830 L 1240 760" fill="none" stroke="#c5d4e7" stroke-width="1.5" stroke-dasharray="3000" style="animation-delay: 0.7s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 900 830 L 960 560" fill="none" stroke="#c5d4e7" stroke-width="1.5" stroke-dasharray="3000" style="animation-delay: 1.2s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 1240 760 L 960 560" fill="none" stroke="#c5d4e7" stroke-width="1.5" stroke-dasharray="3000" style="animation-delay: 1.28s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 900 830 L 1370 500" fill="none" stroke="#abc2dc" stroke-width="1.5" stroke-dasharray="3000" style="animation-delay: 1.7s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 1240 760 L 1370 500" fill="none" stroke="#abc2dc" stroke-width="1.5" stroke-dasharray="3000" style="animation-delay: 1.78s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 960 560 L 1370 500" fill="none" stroke="#abc2dc" stroke-width="1.5" stroke-dasharray="3000" style="animation-delay: 1.86s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 900 830 L 1120 340" fill="none" stroke="#abc2dc" stroke-width="1.5" stroke-dasharray="3000" style="animation-delay: 2.2s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 1240 760 L 1120 340" fill="none" stroke="#abc2dc" stroke-width="1.5" stroke-dasharray="3000" style="animation-delay: 2.28s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 960 560 L 1120 340" fill="none" stroke="#abc2dc" stroke-width="1.5" stroke-dasharray="3000" style="animation-delay: 2.36s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 1370 500 L 1120 340" fill="none" stroke="#abc2dc" stroke-width="1.5" stroke-dasharray="3000" style="animation-delay: 2.44s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 900 830 L 1500 220" fill="none" stroke="#00b3ba" stroke-width="2" stroke-dasharray="3000" style="animation-delay: 2.7s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 1240 760 L 1500 220" fill="none" stroke="#00b3ba" stroke-width="2" stroke-dasharray="3000" style="animation-delay: 2.78s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 960 560 L 1500 220" fill="none" stroke="#00b3ba" stroke-width="2" stroke-dasharray="3000" style="animation-delay: 2.86s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 1370 500 L 1500 220" fill="none" stroke="#00b3ba" stroke-width="2" stroke-dasharray="3000" style="animation-delay: 2.94s; animation-duration: 600ms;"></path>
+    <path data-dw="1" d="M 1120 340 L 1500 220" fill="none" stroke="#00b3ba" stroke-width="2" stroke-dasharray="3000" style="animation-delay: 3.02s; animation-duration: 600ms;"></path>
+  </svg>
+
+  <div data-nd="1" style="position: absolute; left: 892px; top: 822px; width: 16px; height: 16px; border-radius: 50%; background: #09165c; animation-delay: 0.3s;"></div>
+  <div data-r="1" style="position: absolute; left: 926px; top: 812px; width: 250px; font-size: 22px; font-weight: 700; line-height: 1.2; letter-spacing: 0.1em; text-transform: uppercase; color: #09165c; animation-delay: 0.35s;">Regulatory approval</div>
+
+  <div data-nd="1" style="position: absolute; left: 1232px; top: 752px; width: 16px; height: 16px; border-radius: 50%; background: #09165c; animation-delay: 0.9s;"></div>
+  <div data-r="1" style="position: absolute; left: 1266px; top: 742px; width: 250px; font-size: 22px; font-weight: 700; line-height: 1.2; letter-spacing: 0.1em; text-transform: uppercase; color: #09165c; animation-delay: 0.95s;">Product &amp; testing</div>
+
+  <div data-nd="1" style="position: absolute; left: 952px; top: 552px; width: 16px; height: 16px; border-radius: 50%; background: #09165c; animation-delay: 1.4s;"></div>
+  <div data-r="1" style="position: absolute; left: 986px; top: 542px; width: 250px; font-size: 22px; font-weight: 700; line-height: 1.2; letter-spacing: 0.1em; text-transform: uppercase; color: #09165c; animation-delay: 1.45s;">Government integration</div>
+
+  <div data-nd="1" style="position: absolute; left: 1362px; top: 492px; width: 16px; height: 16px; border-radius: 50%; background: #09165c; animation-delay: 1.9s;"></div>
+  <div data-r="1" style="position: absolute; left: 1396px; top: 482px; width: 250px; font-size: 22px; font-weight: 700; line-height: 1.2; letter-spacing: 0.1em; text-transform: uppercase; color: #09165c; animation-delay: 1.95s;">Banking partnerships</div>
+
+  <div data-nd="1" style="position: absolute; left: 1112px; top: 332px; width: 16px; height: 16px; border-radius: 50%; background: #09165c; animation-delay: 2.4s;"></div>
+  <div data-r="1" style="position: absolute; left: 1146px; top: 322px; width: 250px; font-size: 22px; font-weight: 700; line-height: 1.2; letter-spacing: 0.1em; text-transform: uppercase; color: #09165c; animation-delay: 2.45s;">Live transactions</div>
+
+  <div data-nd="1" style="position: absolute; left: 1489px; top: 209px; width: 22px; height: 22px; border-radius: 50%; background: #00b3ba; box-shadow: 0 0 0 8px rgba(0,179,186,0.18); animation-delay: 2.9s;"></div>
+  <div data-r="1" style="position: absolute; left: 1526px; top: 200px; width: 250px; font-size: 22px; font-weight: 800; line-height: 1.2; letter-spacing: 0.1em; text-transform: uppercase; color: #091651; animation-delay: 2.95s;">New use cases</div>
+</section>
+
+<section data-label="Seven Lessons" data-speaker-notes="Pick two or three to talk about. The rest can sit there and be read." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif;">
+  <div data-act="1" style="position: absolute; left: 130px; top: 96px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #8296b8;">Act VII · What I Learned</div>
+  <div data-u="1" style="position: absolute; left: 122px; top: 190px; font-size: 232px; font-weight: 900; line-height: 1; letter-spacing: -0.05em; color: #09165c;">7</div>
+  <h2 data-r="1" style="position: absolute; left: 130px; top: 450px; margin: 0; width: 540px; font-size: 50px; font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; color: #09165c; animation-delay: 0.3s;">THINGS I WISH I KNEW BEFORE BUILDING eDAMANA.</h2>
+  <div data-wx="1" style="position: absolute; left: 130px; top: 700px; width: 140px; height: 4px; background: #00b3ba; animation-delay: 0.6s;"></div>
+
+  <div style="position: absolute; left: 760px; top: 168px; width: 1030px; display: flex; flex-direction: column;">
+    <div data-r="1" style="display: flex; gap: 30px; padding: 20px 0; animation-delay: 0.7s;">
+      <div style="flex: 0 0 56px; font-size: 28px; font-weight: 800; letter-spacing: 0.04em; color: #0e7abf; padding-top: 8px;">01</div>
+      <div>
+        <div style="font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #09165c;">FALL IN LOVE WITH THE PROBLEM.</div>
+        <div style="margin-top: 8px; font-size: 26px; font-weight: 400; color: #3f5079;">Your solution will change.</div>
+      </div>
+    </div>
+    <div data-r="1" style="display: flex; gap: 30px; padding: 20px 0; border-top: 1px solid #dbe8f4; animation-delay: 0.9s;">
+      <div style="flex: 0 0 56px; font-size: 28px; font-weight: 800; letter-spacing: 0.04em; color: #0e7abf; padding-top: 8px;">02</div>
+      <div>
+        <div style="font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #09165c;">AN IDEA WITHOUT EXECUTION IS JUST AN OPINION.</div>
+      </div>
+    </div>
+    <div data-r="1" style="display: flex; gap: 30px; padding: 20px 0; border-top: 1px solid #dbe8f4; animation-delay: 1.1s;">
+      <div style="flex: 0 0 56px; font-size: 28px; font-weight: 800; letter-spacing: 0.04em; color: #0e7abf; padding-top: 8px;">03</div>
+      <div>
+        <div style="font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #09165c;">YOUR FIRST PLAN WILL BE WRONG.</div>
+        <div style="margin-top: 8px; font-size: 26px; font-weight: 400; color: #3f5079;">Make sure your direction isn't.</div>
+      </div>
+    </div>
+    <div data-r="1" style="display: flex; gap: 30px; padding: 20px 0; border-top: 1px solid #dbe8f4; animation-delay: 1.3s;">
+      <div style="flex: 0 0 56px; font-size: 28px; font-weight: 800; letter-spacing: 0.04em; color: #0e7abf; padding-top: 8px;">04</div>
+      <div>
+        <div style="font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #09165c;">IN BUSINESS, RELATIONSHIPS ARE INFRASTRUCTURE.</div>
+      </div>
+    </div>
+    <div data-r="1" style="display: flex; gap: 30px; padding: 20px 0; border-top: 1px solid #dbe8f4; animation-delay: 1.5s;">
+      <div style="flex: 0 0 56px; font-size: 28px; font-weight: 800; letter-spacing: 0.04em; color: #0e7abf; padding-top: 8px;">05</div>
+      <div>
+        <div style="font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #09165c;">A &ldquo;NO&rdquo; IS INFORMATION.</div>
+        <div style="margin-top: 8px; font-size: 26px; font-weight: 400; color: #3f5079;">Learn why.</div>
+      </div>
+    </div>
+    <div data-r="1" style="display: flex; gap: 30px; padding: 20px 0; border-top: 1px solid #dbe8f4; animation-delay: 1.7s;">
+      <div style="flex: 0 0 56px; font-size: 28px; font-weight: 800; letter-spacing: 0.04em; color: #0e7abf; padding-top: 8px;">06</div>
+      <div>
+        <div style="font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #09165c;">YOU WILL ALWAYS WANT MORE TIME AND MORE MONEY THAN YOU HAVE.</div>
+      </div>
+    </div>
+    <div data-r="1" style="display: flex; gap: 30px; padding: 20px 0; border-top: 1px solid #dbe8f4; animation-delay: 1.9s;">
+      <div style="flex: 0 0 56px; font-size: 28px; font-weight: 800; letter-spacing: 0.04em; color: #0e7abf; padding-top: 8px;">07</div>
+      <div>
+        <div style="font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #09165c;">TRUST TAKES YEARS TO BUILD.</div>
+        <div style="margin-top: 8px; font-size: 26px; font-weight: 400; color: #3f5079;">Then it starts working for you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Your Turn" data-speaker-notes="Close the loop back to slide two, land the hero line, then open the floor." style="background: #09165c; overflow: hidden; font-family: Figtree, sans-serif;">
+  <div data-act="1" style="position: absolute; left: 130px; top: 96px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #8296b8;">Act VIII · Your Turn</div>
+  <div data-f="1" style="position: absolute; left: 130px; top: 170px; width: 1300px; font-size: 50px; font-weight: 600; line-height: 1.16; letter-spacing: -0.02em; color: #abc2dc;">SO DON'T WAIT FOR THE PERFECT IDEA.</div>
+  <h2 data-u="1" style="position: absolute; left: 122px; top: 290px; margin: 0; width: 1660px; font-size: 146px; font-weight: 900; line-height: 1.02; letter-spacing: -0.045em; color: #ffffff; animation-delay: 0.5s;">FIND A PROBLEM<br>WORTH REFUSING<br>TO ACCEPT.</h2>
+  <div data-wx="1" style="position: absolute; left: 0; top: 790px; width: 1920px; height: 5px; background: #00b3ba; animation-delay: 1.5s; animation-duration: 1200ms;"></div>
+  <div data-r="1" style="position: absolute; left: 130px; top: 840px; font-size: 44px; font-weight: 700; letter-spacing: -0.015em; color: #7adcdf; animation-delay: 1.9s;">START SMALL. LEARN FAST. KEEP MOVING.</div>
+  <div data-f="1" style="position: absolute; left: 130px; bottom: 76px; animation-delay: 2.3s;">
+    <div style="font-size: 30px; font-weight: 700; color: #ffffff;">Raed Al Dado</div>
+    <div style="margin-top: 6px; font-size: 25px; font-weight: 500; color: #abc2dc;">Founder &amp; CEO · eDamana</div>
+  </div>
+  <div data-f="1" style="position: absolute; right: 130px; top: 160px; font-size: 92px; font-weight: 900; letter-spacing: -0.03em; color: #3ac5cb; animation-delay: 2.7s;">Q&amp;A</div>
+  <img src="assets/ds/lockup-horizontal-white.svg" data-res="lhw" alt="eDamana" style="position: absolute; right: 130px; bottom: 80px; height: 52px;">
+</section>
+
+</x-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Presentation&quot;},&quot;actLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Presentation&quot;}}">
+// Logo paths are declared as <meta name="ext-resource-dependency"> in the
+// helmet so the publish bundler can find them. In a bundled file
+// window.__resources[id] holds a blob URL for the inlined bytes; unbundled it
+// is absent, so we fall back to the project path.
+const ASSETS = {
+  sym: 'assets/ds/symbol.svg',
+  symw: 'assets/ds/symbol-white.svg',
+  lhw: 'assets/ds/lockup-horizontal-white.svg',
+  lvtw: 'assets/ds/lockup-vertical-tagline-white.svg',
+  albl: 'assets/ds/arrow-left-blue.svg',
+  artl: 'assets/ds/arrow-right-teal.svg',
+  pdvld: 'assets/partners/dvld.png',
+  psanad: 'assets/partners/sanad.png',
+  pefaw: 'assets/partners/efawateercom.png',
+  pab: 'assets/partners/arab-bank.png',
+  pcbj: 'assets/partners/cbj.png',
+  fraed: 'assets/founders/raed.png',
+  fjas: 'assets/founders/jasmine.png',
+  ainit: 'assets/app/initiate.png',
+  averf: 'assets/app/verify.png',
+  asecu: 'assets/app/secure.png',
+  acomp: 'assets/app/complete.png'
+};
+
+function asset(id) {
+  const r = typeof window !== 'undefined' && window.__resources;
+  return (r && r[id]) || ASSETS[id];
+}
+
+// The presentation-state table: [stateKey, 0-indexed slide, totalSteps].
+// Every slide not listed here is STATIC — one interaction moves to the next
+// slide. Steps are story beats only; labels, footers and logos are never steps.
+// Click-advanced slides: [stateKey, 0-indexed slide, last stage]. Everything
+// else animates on entry. Keyboard navigation belongs entirely to deck-stage.
+const STEPPED = [
+  ['ecoStage', 8, 6],     // Ecosystem
+  ['appStage', 9, 4],     // Real Product
+  ['jstage', 10, 7],      // The Long Road To Live
+  ['proofStage', 12, 3],  // Vehicles Were The Proof
+  ['beyondStage', 13, 4]  // One Trust Infrastructure
+];
+
+class Component extends DCLogic {
+  state = { ecoStage: 0, appStage: 0, jstage: 0, proofStage: 0, beyondStage: 0 };
+
+  // One click = one meaningful new idea. Once a slide's build is complete the
+  // click falls through to deck-stage, which moves on.
+  step(key, last) {
+    return (e) => {
+      const s = this.state[key];
+      if (s >= last) return;
+      e.stopPropagation();
+      this.setState({ [key]: s + 1 });
+    };
+  }
+
+  // Slide 11 advances on click instead of autoplaying, so the presenter can
+  // stop and talk at every milestone. Once the journey is complete the click
+  // falls through to deck-stage, which moves to the next slide.
+  advanceEco = this.step('ecoStage', 6);
+  advanceApp = this.step('appStage', 4);
+  advanceJourney = this.step('jstage', 7);
+  advanceProof = this.step('proofStage', 3);
+  advanceBeyond = this.step('beyondStage', 4);
+
+
+
+  // Rewind a stepped slide whenever the deck leaves it, so returning replays
+  // the build instead of showing the finished state.
+  componentDidMount() {
+    // Leaving a stepped slide rewinds it, so returning replays its build.
+    this._onDeckMsg = (e) => {
+      const d = e && e.data;
+      if (!d || typeof d.slideIndexChanged !== 'number') return;
+      const reset = {};
+      STEPPED.forEach(([key, idx]) => {
+        if (d.slideIndexChanged !== idx && this.state[key] !== 0) reset[key] = 0;
+      });
+      if (Object.keys(reset).length) this.setState(reset);
+    };
+    window.addEventListener('message', this._onDeckMsg);
+
+    // In a published bundle, window.__resources[id] holds a blob URL for each
+    // declared asset. Swap those in over the project paths.
+    const r = typeof window !== 'undefined' && window.__resources;
+    if (r) {
+      document.querySelectorAll('img[data-res]').forEach((el) => {
+        const u = r[el.getAttribute('data-res')];
+        if (u) el.setAttribute('src', u);
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('message', this._onDeckMsg);
+  }
+
+  renderVals() {
+    const p = this.props || {};
+    return {
+      motion: (p.motion ?? true) ? 'on' : 'off',
+      acts: (p.actLabels ?? true) ? 'on' : 'off',
+      jstage: String(this.state.jstage),
+      ecoStage: String(this.state.ecoStage),
+      appStage: String(this.state.appStage),
+      proofStage: String(this.state.proofStage),
+      beyondStage: String(this.state.beyondStage),
+      advanceProof: this.advanceProof,
+      advanceBeyond: this.advanceBeyond,
+      advanceJourney: this.advanceJourney,
+      advanceEco: this.advanceEco,
+      advanceApp: this.advanceApp,
+      symbolNavy: asset('sym'),
+      symbolWhite: asset('symw'),
+      logoClose: asset('lhw'),
+      logoCover: asset('lvtw'),
+      arrowBuy: asset('albl'),
+      arrowSell: asset('artl'),
+      logoDvld: asset('pdvld'),
+      logoSanad: asset('psanad'),
+      logoEfaw: asset('pefaw'),
+      logoArabBank: asset('pab'),
+      logoCbj: asset('pcbj'),
+      photoRaed: asset('fraed'),
+      photoJasmine: asset('fjas')
+    };
+  }
+}
+</script>
+
+<script>
+(() => {
+  async function toggleFullscreen() {
+    try {
+      if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen({ navigationUI: 'hide' });
+      } else {
+        await document.exitFullscreen();
+      }
+    } catch (_) {}
+  }
+
+  window.addEventListener('keydown', (e) => {
+    const tag = (e.target && e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key === 'f' || e.key === 'F') {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleFullscreen();
+    }
+  }, true);
+
+  // Double-click/tap the black stage edge to toggle fullscreen without
+  // interfering with normal single-click slide navigation.
+  window.addEventListener('dblclick', (e) => {
+    const interactive = e.target && e.target.closest && e.target.closest('a,button,input,select,textarea,[role="button"]');
+    if (!interactive) toggleFullscreen();
+  }, true);
+})();
+</script>
+
+</body>
+</html>
