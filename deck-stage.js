@@ -1589,7 +1589,7 @@
         if (this._overlay) this._overlay.style.marginLeft = '0';
         return;
       }
-      const rw = this._railWidth();
+      const rw = 0;
       if (stage) stage.style.left = rw + 'px';
       // Overlay is centred on the viewport via left:50% + translate(-50%);
       // marginLeft shifts the centre by rw/2 so it lands in the middle of
