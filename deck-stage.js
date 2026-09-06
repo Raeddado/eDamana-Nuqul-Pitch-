@@ -1590,7 +1590,10 @@
         return;
       }
       const rw = 0;
-      if (stage) stage.style.left = rw + 'px';
+      if (stage) {
+  stage.style.left = '0';
+  stage.style.right = '0';
+}
       // Overlay is centred on the viewport via left:50% + translate(-50%);
       // marginLeft shifts the centre by rw/2 so it lands in the middle of
       // the [rw, innerWidth] stage region.
