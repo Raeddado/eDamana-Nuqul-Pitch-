@@ -1597,7 +1597,7 @@
       if (this._overlay) this._overlay.style.marginLeft = (rw / 2) + 'px';
       const vw = window.innerWidth - rw;
       const vh = window.innerHeight;
-      const s = Math.max(vw / this.designWidth, vh / this.designHeight);
+      const s = Math.min(vw / this.designWidth, vh / this.designHeight);
       this._canvas.style.transform = `scale(${s})`;
     }
 
