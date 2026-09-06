@@ -85,22 +85,27 @@ a:hover { color: #09165c; text-decoration: underline; text-underline-offset: 3px
   [data-motion="off"] [data-deck-active] * { animation: none !important; }
 }
 [data-acts="off"] [data-act] { display: none; }
-/* ── Click-advanced builds ─────────────────────────────────────────────
-   A slide opts in with data-steps + data-stage="{{ sN }}" + onClick. ────────────────────────────────────
-   Elements carry data-from="N" = the stage they appear at. Each rule hides
-   everything still ahead of the current stage. With NO data-stage attribute
-   (streaming, print, PPTX export) nothing is hidden, so the static slide is
-   the finished journey. */
-[data-steps] [data-from] { transition: opacity 600ms cubic-bezier(.2,0,.2,1), stroke-dashoffset 1100ms cubic-bezier(.2,0,.2,1); }
-[data-steps] [data-arrive] { transition: color 600ms cubic-bezier(.2,0,.2,1); }
-[data-steps][data-stage="0"] [data-from] { opacity: 0; stroke-dashoffset: 2400; }
-[data-steps][data-stage="1"] :is([data-from="2"],[data-from="3"],[data-from="4"],[data-from="5"],[data-from="6"],[data-from="7"]) { opacity: 0; stroke-dashoffset: 2400; }
-[data-steps][data-stage="2"] :is([data-from="3"],[data-from="4"],[data-from="5"],[data-from="6"],[data-from="7"]) { opacity: 0; stroke-dashoffset: 2400; }
-[data-steps][data-stage="3"] :is([data-from="4"],[data-from="5"],[data-from="6"],[data-from="7"]) { opacity: 0; stroke-dashoffset: 2400; }
-[data-steps][data-stage="4"] :is([data-from="5"],[data-from="6"],[data-from="7"]) { opacity: 0; stroke-dashoffset: 2400; }
-[data-steps][data-stage="5"] :is([data-from="6"],[data-from="7"]) { opacity: 0; stroke-dashoffset: 2400; }
-[data-steps][data-stage="6"] [data-from="7"] { opacity: 0; stroke-dashoffset: 2400; }
-[data-steps]:is([data-stage="0"],[data-stage="1"],[data-stage="2"],[data-stage="3"],[data-stage="4"],[data-stage="5"],[data-stage="6"]) [data-arrive] { color: #8296b8; }
+/* ── Automatic staged builds ───────────────────────────────────────────
+   Elements carry data-from="N" = the beat they arrive on. Beats run on a
+   timer the moment the slide becomes active — no click, no counters. Every
+   keyframe declares only `from`, so the authored static style is still the
+   end state for print, thumbnails and PPTX export. */
+@keyframes ed-beat { from { opacity: 0; } }
+@keyframes ed-beat-draw { from { opacity: 0; stroke-dashoffset: 2400; } }
+@keyframes ed-arrive { from { color: #8296b8; } }
+@media (prefers-reduced-motion: no-preference) {
+  [data-deck-active] [data-from] { animation: ed-beat 600ms cubic-bezier(.2,0,.2,1) both; }
+  [data-deck-active] [data-from][stroke-dasharray] { animation: ed-beat-draw 1100ms cubic-bezier(.2,0,.2,1) both; }
+  [data-deck-active] [data-from="1"], [data-deck-active] [data-from="1"][stroke-dasharray] { animation-delay: 0.45s; }
+  [data-deck-active] [data-from="2"], [data-deck-active] [data-from="2"][stroke-dasharray] { animation-delay: 1.35s; }
+  [data-deck-active] [data-from="3"], [data-deck-active] [data-from="3"][stroke-dasharray] { animation-delay: 2.25s; }
+  [data-deck-active] [data-from="4"], [data-deck-active] [data-from="4"][stroke-dasharray] { animation-delay: 3.15s; }
+  [data-deck-active] [data-from="5"], [data-deck-active] [data-from="5"][stroke-dasharray] { animation-delay: 4.05s; }
+  [data-deck-active] [data-from="6"], [data-deck-active] [data-from="6"][stroke-dasharray] { animation-delay: 4.95s; }
+  [data-deck-active] [data-from="7"], [data-deck-active] [data-from="7"][stroke-dasharray] { animation-delay: 5.85s; }
+  [data-deck-active] [data-arrive] { animation: ed-arrive 700ms cubic-bezier(.2,0,.2,1) both; animation-delay: 6.6s; }
+  [data-motion="off"] [data-deck-active] * { animation: none !important; }
+}
 </style>
 </helmet>
 <div data-motion="{{ motion }}" data-acts="{{ acts }}" style="width: 100%; height: 100%;">
@@ -296,7 +301,7 @@ a:hover { color: #09165c; text-decoration: underline; text-underline-offset: 3px
   </div>
 </section>
 
-<section data-steps="1" data-stage="{{ ecoStage }}" onClick="{{ advanceEco }}" data-label="Ecosystem" data-speaker-notes="Regulation opened the environment. Four institutions each supplied one capability. eDamana is the layer that bound them into a single transaction. Click through it." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif; cursor: pointer;">
+<section data-label="Ecosystem" data-speaker-notes="Regulation opened the environment. Four institutions each supplied one capability. eDamana is the layer that bound them into a single transaction. Click through it." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif;">
   <h2 data-r="1" style="position: absolute; left: 130px; top: 96px; margin: 0; width: 760px; font-size: 54px; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: #09165c;">IN FINTECH,<br>YOU DON'T BUILD ALONE.</h2>
 
   <div data-r="1" style="position: absolute; left: 1320px; top: 96px; display: flex; align-items: center; gap: 26px; animation-delay: 0.3s;">
@@ -364,7 +369,7 @@ a:hover { color: #09165c; text-decoration: underline; text-underline-offset: 3px
   <div data-from="6" style="position: absolute; left: 130px; top: 960px; font-size: 25px; font-weight: 600; line-height: 1.35; color: #5d6f94;">Your product is only as strong as the ecosystem that trusts it.</div>
 </section>
 
-<section data-steps="1" data-stage="{{ appStage }}" onClick="{{ advanceApp }}" data-label="Real Product" data-speaker-notes="Click through the four screens. This is the shipped product, not a concept — the transaction on screen is a real one." style="background: #09165c; overflow: hidden; font-family: Figtree, sans-serif; cursor: pointer;">
+<section data-label="Real Product" data-speaker-notes="Click through the four screens. This is the shipped product, not a concept — the transaction on screen is a real one." style="background: #09165c; overflow: hidden; font-family: Figtree, sans-serif;">
   <h2 data-r="1" style="position: absolute; left: 130px; top: 108px; margin: 0; font-size: 54px; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: #ffffff;">FROM INFRASTRUCTURE<br>TO A LIVE TRANSACTION.</h2>
 
   <div style="position: absolute; left: 280px; top: 446px; width: 1359px; height: 2px; background: rgba(255,255,255,0.16);"></div>
@@ -414,7 +419,7 @@ a:hover { color: #09165c; text-decoration: underline; text-underline-offset: 3px
   <div style="position: absolute; right: 130px; top: 992px; font-size: 19px; font-weight: 400; letter-spacing: 0.02em; color: #8296b8;">Powered by the same trust logic: IDENTIFY &#8594; HOLD &#8594; VERIFY &#8594; RELEASE</div>
 </section>
 
-<section data-steps="1" data-stage="{{ jstage }}" onClick="{{ advanceJourney }}" data-label="First Live Transaction" data-speaker-notes="Click to advance one milestone at a time. The dashed line is the plan; the solid line is what actually happened. Dwell on the five-year gap and on the sandbox gate." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif; cursor: pointer;">
+<section data-label="First Live Transaction" data-speaker-notes="Click to advance one milestone at a time. The dashed line is the plan; the solid line is what actually happened. Dwell on the five-year gap and on the sandbox gate." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif;">
   <div data-act="1" style="position: absolute; left: 130px; top: 96px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #8296b8;">Act IV · Proving It</div>
   <h2 data-r="1" style="position: absolute; left: 130px; top: 150px; margin: 0; width: 820px; font-size: 62px; font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; color: #09165c;">FROM &ldquo;WHAT IF?&rdquo;<br>TO A REAL TRANSACTION.</h2>
   <div data-r="1" style="position: absolute; left: 1000px; top: 158px; width: 500px; text-align: right; animation-delay: 0.3s;">
@@ -508,7 +513,7 @@ a:hover { color: #09165c; text-decoration: underline; text-underline-offset: 3px
   <p data-f="1" style="position: absolute; left: 1020px; top: 730px; margin: 0; font-size: 30px; font-weight: 400; color: #7adcdf; animation-delay: 3.8s;">Proof changes the conversation.</p>
 </section>
 
-<section data-steps="1" data-stage="{{ proofStage }}" onClick="{{ advanceProof }}" data-label="Proof Not Limit" data-speaker-notes="Vehicles went live, got tested, got integrated, got proven. Then the question stopped being whether it works." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif; cursor: pointer;">
+<section data-label="Proof Not Limit" data-speaker-notes="Vehicles went live, got tested, got integrated, got proven. Then the question stopped being whether it works." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif;">
   <div data-act="1" style="position: absolute; left: 130px; top: 96px; font-size: 21px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #8296b8;">Act V · The Bigger Discovery</div>
   <h2 data-r="1" style="position: absolute; left: 130px; top: 180px; margin: 0; font-size: 58px; font-weight: 600; letter-spacing: -0.025em; color: #5d6f94;">VEHICLES WERE THE PROOF.</h2>
   <div data-u="1" style="position: absolute; left: 124px; top: 244px; font-size: 152px; font-weight: 900; line-height: 1; letter-spacing: -0.045em; color: #09165c; animation-delay: 0.35s;">NOT THE LIMIT.</div>
@@ -542,7 +547,7 @@ a:hover { color: #09165c; text-decoration: underline; text-underline-offset: 3px
   <div data-from="3" style="position: absolute; left: 130px; top: 912px; width: 900px; font-size: 48px; font-weight: 800; line-height: 1.12; letter-spacing: -0.025em; color: #09165c;">THEN WE REALIZED THE MODEL COULD GO FURTHER.</div>
 </section>
 
-<section data-steps="1" data-stage="{{ beyondStage }}" onClick="{{ advanceBeyond }}" data-label="One Trust Engine" data-speaker-notes="One infrastructure. Vehicles is the branch already proven; the rest are the same four steps on a different transaction." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif; cursor: pointer;">
+<section data-label="One Trust Engine" data-speaker-notes="One infrastructure. Vehicles is the branch already proven; the rest are the same four steps on a different transaction." style="background: #ffffff; overflow: hidden; font-family: Figtree, sans-serif;">
   <h2 data-r="1" style="position: absolute; left: 130px; top: 120px; margin: 0; font-size: 52px; font-weight: 600; letter-spacing: -0.025em; color: #5d6f94;">THE TRANSACTION CHANGES.</h2>
   <h2 data-r="1" style="position: absolute; left: 130px; top: 186px; margin: 0; font-size: 52px; font-weight: 800; letter-spacing: -0.03em; color: #09165c; animation-delay: 0.3s;">THE TRUST PROBLEM DOESN'T.</h2>
 
@@ -781,61 +786,10 @@ function asset(id) {
   return (r && r[id]) || ASSETS[id];
 }
 
-// The presentation-state table: [stateKey, 0-indexed slide, totalSteps].
-// Every slide not listed here is STATIC — one interaction moves to the next
-// slide. Steps are story beats only; labels, footers and logos are never steps.
-// Click-advanced slides: [stateKey, 0-indexed slide, last stage]. Everything
-// else animates on entry. Keyboard navigation belongs entirely to deck-stage.
-const STEPPED = [
-  ['ecoStage', 8, 6],     // Ecosystem
-  ['appStage', 9, 4],     // Real Product
-  ['jstage', 10, 7],      // The Long Road To Live
-  ['proofStage', 12, 3],  // Vehicles Were The Proof
-  ['beyondStage', 13, 4]  // One Trust Infrastructure
-];
-
 class Component extends DCLogic {
-  state = { ecoStage: 0, appStage: 0, jstage: 0, proofStage: 0, beyondStage: 0 };
-
-  // One click = one meaningful new idea. Once a slide's build is complete the
-  // click falls through to deck-stage, which moves on.
-  step(key, last) {
-    return (e) => {
-      const s = this.state[key];
-      if (s >= last) return;
-      e.stopPropagation();
-      this.setState({ [key]: s + 1 });
-    };
-  }
-
-  // Slide 11 advances on click instead of autoplaying, so the presenter can
-  // stop and talk at every milestone. Once the journey is complete the click
-  // falls through to deck-stage, which moves to the next slide.
-  advanceEco = this.step('ecoStage', 6);
-  advanceApp = this.step('appStage', 4);
-  advanceJourney = this.step('jstage', 7);
-  advanceProof = this.step('proofStage', 3);
-  advanceBeyond = this.step('beyondStage', 4);
-
-
-
-  // Rewind a stepped slide whenever the deck leaves it, so returning replays
-  // the build instead of showing the finished state.
+  // In a published bundle, window.__resources[id] holds a blob URL for each
+  // declared asset. Swap those in over the project paths.
   componentDidMount() {
-    // Leaving a stepped slide rewinds it, so returning replays its build.
-    this._onDeckMsg = (e) => {
-      const d = e && e.data;
-      if (!d || typeof d.slideIndexChanged !== 'number') return;
-      const reset = {};
-      STEPPED.forEach(([key, idx]) => {
-        if (d.slideIndexChanged !== idx && this.state[key] !== 0) reset[key] = 0;
-      });
-      if (Object.keys(reset).length) this.setState(reset);
-    };
-    window.addEventListener('message', this._onDeckMsg);
-
-    // In a published bundle, window.__resources[id] holds a blob URL for each
-    // declared asset. Swap those in over the project paths.
     const r = typeof window !== 'undefined' && window.__resources;
     if (r) {
       document.querySelectorAll('img[data-res]').forEach((el) => {
@@ -845,25 +799,11 @@ class Component extends DCLogic {
     }
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('message', this._onDeckMsg);
-  }
-
   renderVals() {
     const p = this.props || {};
     return {
       motion: (p.motion ?? true) ? 'on' : 'off',
       acts: (p.actLabels ?? true) ? 'on' : 'off',
-      jstage: String(this.state.jstage),
-      ecoStage: String(this.state.ecoStage),
-      appStage: String(this.state.appStage),
-      proofStage: String(this.state.proofStage),
-      beyondStage: String(this.state.beyondStage),
-      advanceProof: this.advanceProof,
-      advanceBeyond: this.advanceBeyond,
-      advanceJourney: this.advanceJourney,
-      advanceEco: this.advanceEco,
-      advanceApp: this.advanceApp,
       symbolNavy: asset('sym'),
       symbolWhite: asset('symw'),
       logoClose: asset('lhw'),
